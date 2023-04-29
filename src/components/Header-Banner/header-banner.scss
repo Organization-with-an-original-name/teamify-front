@@ -1,0 +1,80 @@
+@import '../../App.scss';
+.header-banner{
+    height: 830px;
+    width: 100%;
+    .header-banner-wrap{
+        height: 100%;
+        width: 100%;
+        background: no-repeat url('../../assets/img/banner.webp');
+        background-size: cover;
+        background-position: right;
+        position: relative;
+    }
+}
+.header-banner-container{
+    position: relative;
+    width: 40%;
+    left: 10%;
+    top: 30%;
+    .banner-text{
+        color: $DarkBlue;
+        font-size: 84px;
+    }
+}
+.banner-search{
+    width: 100%;
+}
+.search-input-wrap{
+    flex: 0 1 40%;
+    position: relative;
+    &:first-child::before{
+        position: absolute;
+        content: '';
+        width: 1px;
+        height: 51px;
+        background: #e0e4f8;
+        right: 0;
+        top: 50%;
+        z-index: 1;
+        transform: translateY(-50%);
+    }
+}
+.search-input{
+    padding-left: 20px;
+    height: 70px;
+    width: 100%;
+    border: none;
+    background-color: white;
+    display: block;
+    &::placeholder{
+        color: #777777;
+        font-size: 18px;
+        font-weight: 400;
+        padding: 9px 33px 9px 32px
+    }
+   
+}
+.search-input::before{
+    content: 'sss';
+    display: block;
+
+}
+
+.search-submit{
+    @include HeaderBtn();
+    background-color: $Pink;
+    color: white;
+    border: none;
+}
+
+@media screen and (max-width: 1285px) {
+    .banner-text{
+        font-size: 64px !important;
+    }
+}
+@media screen and (max-width: 1250px) {
+    .banner-search{
+        flex-direction: column;
+        gap: 10px;
+    }
+}

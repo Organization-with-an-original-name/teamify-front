@@ -1,0 +1,46 @@
+@import '../../App.scss';
+.cat-undertitle{
+    text-align: center;
+    color: $Pink;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    display: block;
+    font-size: 18px;
+}
+.cat-title{
+    text-align: center;
+    color: $DarkBlue;
+    font-size: 44px;
+    margin-bottom: 150px;
+}
+.categories{
+    margin-top: 200px;
+}
+.services-icon{
+    img{
+        width: 60px;
+        height: 60px;
+    }
+}
+
+.catcard{
+    width: 270px;
+    height: 240px;
+    .catcard-wrap{
+        height: 100%;
+        width: 100%;
+        padding: 50px;
+        border: 1px solid #dafcef;
+    }
+}
+.services-cap{
+    .cap-link{
+        text-decoration: none;
+        font-size: 20px;
+    }
+    span{
+        font-size: 18px;
+        color: $Pink;
+    }
+}
+

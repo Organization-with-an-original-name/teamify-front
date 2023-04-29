@@ -1,0 +1,56 @@
+@import '../../App.scss';
+.header-logo{
+    height: 120px;
+    flex: 1 1 20%;
+}
+.logo-title{
+    font-size: 18px;
+    min-width: 125px;
+    span{
+        color: $DarkBlue;
+        font-weight: 900;
+        font-size: 28px;
+    }
+    color: $Pink;
+}
+.header-links{
+    flex: 1 1 50%;
+    ul{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        li{
+            color: $DarkBlue;
+            font-size: 18px;
+        }
+    }
+}
+.header-wrap{
+    .container{
+        margin: 0 auto;
+    }
+}
+.header-btns{
+    flex: 1 1 30%;
+    justify-self: flex-end;
+    gap: 15px;
+    .btn-reg{
+        @include HeaderBtn();
+        background-color: $Pink;
+        color: white;
+        border: none;
+    }
+    .btn-log{
+        @include HeaderBtn();
+        border: 1px solid $Pink;
+        color: $Pink;
+        background-color: transparent;
+
+    }
+}
+@media screen and (max-width: 1300px) {
+   .header-links{
+     flex: 1 1 40%;
+   }
+}
