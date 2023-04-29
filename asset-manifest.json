@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Organization-with-an-original-name/teamify-front/static/css/main.073c9b0a.css",
-    "main.js": "/Organization-with-an-original-name/teamify-front/static/js/main.bc6024b8.js",
-    "static/js/787.de905a5d.chunk.js": "/Organization-with-an-original-name/teamify-front/static/js/787.de905a5d.chunk.js",
-    "static/media/logo.svg": "/Organization-with-an-original-name/teamify-front/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/Organization-with-an-original-name/teamify-front/index.html",
-    "main.073c9b0a.css.map": "/Organization-with-an-original-name/teamify-front/static/css/main.073c9b0a.css.map",
-    "main.bc6024b8.js.map": "/Organization-with-an-original-name/teamify-front/static/js/main.bc6024b8.js.map",
-    "787.de905a5d.chunk.js.map": "/Organization-with-an-original-name/teamify-front/static/js/787.de905a5d.chunk.js.map"
+    "main.css": "/teamify-front/static/css/main.073c9b0a.css",
+    "main.js": "/teamify-front/static/js/main.089237d5.js",
+    "static/js/787.de905a5d.chunk.js": "/teamify-front/static/js/787.de905a5d.chunk.js",
+    "static/media/logo.svg": "/teamify-front/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/teamify-front/index.html",
+    "main.073c9b0a.css.map": "/teamify-front/static/css/main.073c9b0a.css.map",
+    "main.089237d5.js.map": "/teamify-front/static/js/main.089237d5.js.map",
+    "787.de905a5d.chunk.js.map": "/teamify-front/static/js/787.de905a5d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.bc6024b8.js"
+    "static/js/main.089237d5.js"
   ]
 }
