@@ -5,6 +5,7 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import { HeaderBanner } from './components/Header-Banner/header-banner';
 import { Categories } from './components/Categories/categories';
+import { Createteam } from './components/CreateTeam/createteam';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <div className="root-wrap">
       <Header />
       <HeaderBanner />
+      <Createteam />
       <Categories />
     </div>
   );

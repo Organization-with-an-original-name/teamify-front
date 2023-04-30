@@ -1,0 +1,36 @@
+@import '../../App.scss';
+
+.createteam{
+    height: 500px;
+    background: url('../../assets/img/crteam.webp');
+    .createteam-wrap{
+        height: 100%;
+        width: 100%;
+        background-color: rgba(31,43,123,0.8);
+        .createteam-items{
+            padding: 70px 0;
+            width: 50%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .createteam-undertitle{
+                color: white;
+                font-size: 20px;
+            }
+            .createteam-title{
+                color: white;
+                font-size: 54px;
+                text-align: center;
+            }
+            .createteam-btn{
+                width: 278px;
+                height: 61px;
+                border: 1px solid $LightViolet;
+                background-color: transparent;
+                color: $LightViolet;
+                font-size: 24px;
+            }
+        }
+    }   
+}
