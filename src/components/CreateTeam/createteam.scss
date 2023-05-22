@@ -34,3 +34,36 @@
         }
     }   
 }
+@media screen and (max-width:810px){
+    .createteam-title{
+        font-size: 32px !important;
+    }
+    .createteam-undertitle{
+        font-size: 24px !important;
+    }
+ }
+ @media screen and (max-width:610px){
+    .createteam-items{
+        width: 80% !important;
+    }
+ }
+ @media screen and (max-width:510px){
+     .createteam-title{
+        font-size: 28px !important;
+    }
+    .createteam-undertitle{
+        font-size: 20px !important;
+    }
+    .createteam-items{
+        width: 80% !important;
+    }
+ }
+ @media screen and (max-width:325px){
+   .createteam-items{
+       width: 90% !important;
+      
+   }
+   .createteam-btn{
+     width: 200px !important;
+   }
+}

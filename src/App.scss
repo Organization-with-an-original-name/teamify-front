@@ -1,6 +1,9 @@
 $Pink: #FB246A;
 $DarkBlue: #183262;
 $LightViolet: #8b92dd;
+$HoverColor: #da2461;
+$LightBlack: #4C4C4C;
+$DarkBlack:#222222;
 @mixin HeaderBtn{
     min-width: 149px;
     height: auto;
@@ -8,3 +11,4 @@ $LightViolet: #8b92dd;
     font-size: 20px;
 
 }
+

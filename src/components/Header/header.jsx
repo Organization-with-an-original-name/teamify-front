@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import './header.scss';
 import logo from '../../assets/icon/log.png';
-export const Header = function(){
+export const Header = function(props){
     const fixedHeader = useRef();
+    const header = useRef();
+    const RegHandler = props.SetopenR;
     useEffect(()=>{
         window.onscroll = ()=>{
             if(window.pageYOffset>120){
@@ -22,9 +24,15 @@ export const Header = function(){
               
             }
         }
+        if(props.width <= 1090){
+            header.current.style.display = 'none';
+        }
+        else{
+            header.current.style.display = 'block';
+        }
     });
     return(
-        <header className="header">
+        <header ref={header} className="header">
             <div className="header-wrap">
                 <div className="header-container d-flex align-items-center p-0">
                     <div className="logo-container d-flex align-items-center">
@@ -41,7 +49,7 @@ export const Header = function(){
                             </ul>
                     </div>
                     <div className="header-btns d-flex">
-                        <button className="btn-reg">Register</button>
+                        <button className="btn-reg" onClick={RegHandler}></button>
                         <button className="btn-log">Login</button>
                     </div>
                    
@@ -63,10 +71,9 @@ export const Header = function(){
                             </ul>
                     </div>
                     <div className="header-btns d-flex">
-                        <button className="btn-reg">Register</button>
+                        <button className="btn-reg" onClick={RegHandler}></button>
                         <button className="btn-log">Login</button>
                     </div>
-                   
                 </div>
             </div>
         </header>

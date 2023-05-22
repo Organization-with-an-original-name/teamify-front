@@ -8,7 +8,7 @@ export const HeaderBanner = function(){
         <section className="header-banner">
             <div className="header-banner-wrap">
                 <div className="header-banner-container">
-                    <h2 className="banner-text mb-3">Find the <br /> most exciting <br /> Team!</h2>
+                    <h2 className="banner-text mb-3">Find the most exciting Team!</h2>
                     <div className="banner-search d-flex">
                         <div className="search-input-wrap">
                             <input className="search-input" placeholder="Enter lorem" type="text" />

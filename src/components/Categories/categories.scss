@@ -23,14 +23,18 @@
     }
 }
 
+
 .catcard{
     width: 270px;
     height: 240px;
     .catcard-wrap{
         height: 100%;
         width: 100%;
-        padding: 50px;
         border: 1px solid #dafcef;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
 .services-cap{
@@ -43,4 +47,26 @@
         color: $Pink;
     }
 }
+.cat-col{
+ display: flex;
+}
 
+// @media screen and (max-width:767px){
+//     .cat-container{
+//         padding-right: 60px;
+//     }
+   
+//  }
+ @media screen and (max-width:575px){
+    .cat-col{
+        padding: 0px;
+        justify-content: center;
+    }
+   
+ }
+
+//  .cat-col{
+//     display: flex;
+//     justify-content: center;
+//     padding: 0 !important;
+//  }

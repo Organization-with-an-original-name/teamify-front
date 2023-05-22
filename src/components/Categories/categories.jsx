@@ -9,8 +9,8 @@ export const Categories = function(){
                 <h4 className="cat-undertitle">Featured Teams Categories</h4>
                 <h1 className="cat-title">Browse Top Categories</h1>
                 <div className="cards-container d-flex flex-wrap">
-                    <div class="row d-flex justify-contnet-center">
-                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="row d-flex cat-container" >
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-4 cat-col">
                            <div className="catcard">
                                 <div className="catcard-wrap">
                                     <div class="cat-services text-center">
@@ -25,7 +25,7 @@ export const Categories = function(){
                                 </div>
                            </div>
                         </div>
-                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-4 cat-col">
                            <div className="catcard">
                                 <div className="catcard-wrap">
                                     <div class="cat-services text-center">
@@ -40,7 +40,7 @@ export const Categories = function(){
                                 </div>
                            </div>
                         </div>
-                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-4 cat-col">
                            <div className="catcard">
                                 <div className="catcard-wrap">
                                     <div class="cat-services text-center">
@@ -55,7 +55,7 @@ export const Categories = function(){
                                 </div>
                            </div>
                         </div>
-                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-4 cat-col">
                            <div className="catcard">
                                 <div className="catcard-wrap">
                                     <div class="cat-services text-center">
@@ -70,7 +70,7 @@ export const Categories = function(){
                                 </div>
                            </div>
                         </div>
-                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-4 cat-col">
                            <div className="catcard">
                                 <div className="catcard-wrap">
                                     <div class="cat-services text-center">
@@ -85,7 +85,7 @@ export const Categories = function(){
                                 </div>
                            </div>
                         </div>
-                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-4 cat-col">
                            <div className="catcard">
                                 <div className="catcard-wrap">
                                     <div class="cat-services text-center">
@@ -100,7 +100,7 @@ export const Categories = function(){
                                 </div>
                            </div>
                         </div>
-                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-4 cat-col">
                            <div className="catcard">
                                 <div className="catcard-wrap">
                                     <div class="cat-services text-center">
@@ -115,7 +115,7 @@ export const Categories = function(){
                                 </div>
                            </div>
                         </div>
-                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-4 cat-col">
                            <div className="catcard">
                                 <div className="catcard-wrap">
                                     <div class="cat-services text-center">
