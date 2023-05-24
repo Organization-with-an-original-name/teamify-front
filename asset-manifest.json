@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/teamify-front/static/css/main.b23f9cd0.css",
-    "main.js": "/teamify-front/static/js/main.9e5214c9.js",
+    "main.css": "/teamify-front/static/css/main.bec68994.css",
+    "main.js": "/teamify-front/static/js/main.1e4a2665.js",
     "static/js/787.de905a5d.chunk.js": "/teamify-front/static/js/787.de905a5d.chunk.js",
     "static/media/crteam.webp": "/teamify-front/static/media/crteam.0785adfd9df3d0856d74.webp",
     "static/media/banner.webp": "/teamify-front/static/media/banner.52cc43a806208f89e633.webp",
+    "static/media/close.png": "/teamify-front/static/media/close.d6a3b3b6496e0f6deeea.png",
     "static/media/tour-icon.png": "/teamify-front/static/media/tour-icon.937a68ced19aad04f009.png",
     "index.html": "/teamify-front/index.html",
-    "main.b23f9cd0.css.map": "/teamify-front/static/css/main.b23f9cd0.css.map",
-    "main.9e5214c9.js.map": "/teamify-front/static/js/main.9e5214c9.js.map",
+    "main.bec68994.css.map": "/teamify-front/static/css/main.bec68994.css.map",
+    "main.1e4a2665.js.map": "/teamify-front/static/js/main.1e4a2665.js.map",
     "787.de905a5d.chunk.js.map": "/teamify-front/static/js/787.de905a5d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b23f9cd0.css",
-    "static/js/main.9e5214c9.js"
+    "static/css/main.bec68994.css",
+    "static/js/main.1e4a2665.js"
   ]
 }
