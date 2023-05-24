@@ -1,11 +1,14 @@
 @import '../../App.scss';
-#modal{
-    height: 100vh;
-    width: 100%;
-}
+// #modal{
+//     height: 100vh;
+//     width: 100%;
+// }
 
 .modalreg{
     .modalreg-wrap{
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
         height: 100%;
         width: 100%;
         position: fixed;
@@ -14,7 +17,10 @@
         z-index: 4;
         height: 100%;
         width: 100%;
-        background-color: rgba(31,43,123,0.8);
+        // background-color: rgba(31,43,123,0.6);
+        background: 
+		linear-gradient(rgba(196, 102, 0, 1), rgba(155, 89, 182, 1));
+
         display: flex;
         justify-content: center;
         align-items: center;
@@ -25,15 +31,23 @@
     z-index: 1;
     height: auto;
     width: 500px;
-    border-radius: 20px;
     overflow: hidden;
 
 }
 .modal-title{
-    padding: 30px;
-    background-color: $LightViolet;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
     text-align: center;
-    color: white;
+    color: #2C3E50;
+    font-weight: 400;
+    font-size: 28px;
+}
+.modal-subtitle{
+    text-align: center;
+    color: #2C3E50;
+    font-weight: 400;
+    font-size: 22px;
 }
 .modal-inputs{
     padding: 50px 30px;
@@ -44,19 +58,103 @@
     input{
        width: 80%;
        height: 60px;
-       border-radius: 20px;
        border: 1px solid gainsboro;
-       &::placeholder{
-        padding-left: 30px;
-       }
+       padding-left: 15px;
     }
     button{
-        width: 100%;
-        height: 60px;
+        padding: 10px 35px;
         border: none;
-        border-radius: 20px;
-        font-size: 24px;
+        font-size: 22px;
         margin-top: 30px;
+        align-self: center;
+        background-color: $FormGreen;
+        color: white;
         
+        
+    }
+}
+.modal-progress{
+    display: flex;
+    align-items: baseline;
+    gap: 75px;
+    .progress-step{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .step-box{
+            padding: 5px 15px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            position: relative;
+            background-color: white;
+
+            
+            &::after{
+                content: '';
+                display: block;
+                background-color: white;
+                height: 4px;
+                width: 160px;
+                position: absolute;
+                top: 50%;
+                left: 100%;
+                
+            }
+           
+            p{
+                color: black;
+            }
+        }
+        p{
+            color: white;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+    }
+}
+.progress-step:last-child{
+    .step-box::after{
+        display: none;
+    }
+}
+.step-box-active{
+    background-color: $FormGreen !important;
+    p{
+        color: white !important;
+    }
+    
+}
+.active-link::after{
+    background-color: $FormGreen !important;
+}
+.bg-green{
+    background-color: $FormGreen !important;
+}
+.select-wrap{
+    align-items: baseline;
+    select{
+        width: 60px;
+        height: 30px;
+    }
+}
+.modal-close{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    background-color: transparent;
+    border: none;
+    &:hover{
+        img{
+            transform: scale(1.2);
+        }
+    }
+    img{
+        width: 50px;
+        height: 50px;
+    }
+}
+@media screen and (max-width: 505px){
+    .step-box::after{
+       display: none;
     }
 }

@@ -24,7 +24,7 @@ function App() {
     <div className="root-wrap">
       
       <Header SetopenR = {SetRegOpen} width={windowWidth}/>
-      <Humburger width={windowWidth}/>
+      <Humburger width={windowWidth} SetopenR = {SetRegOpen}/>
       <HeaderBanner />
       <Createteam />
       <Categories />
