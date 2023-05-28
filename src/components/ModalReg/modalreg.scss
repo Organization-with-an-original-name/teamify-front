@@ -20,7 +20,7 @@
         // background-color: rgba(31,43,123,0.6);
         background: 
 		linear-gradient(rgba(196, 102, 0, 1), rgba(155, 89, 182, 1));
-
+        
         display: flex;
         justify-content: center;
         align-items: center;
@@ -154,7 +154,39 @@
     }
 }
 @media screen and (max-width: 505px){
-    .step-box::after{
-       display: none;
+    .modal-window{
+       transform: scale(0.7);
+    }
+    .modal-progress{
+        transform: scale(0.9);
+    }
+    .modalreg-wrap{
+        gap: 0 !important;
+    }
+    .modal-progress .progress-step .step-box::after{
+        width: 100px;
+    }
+    .modal-progress{
+        gap: 30px;
+    }
+    .modal-close img{
+        height: 40px;
+        width: 40px;
+    }
+}
+@media screen and (max-width: 390px){
+    .modal-progress .progress-step p{
+        text-align: center !important;
+    }
+
+}
+@media screen and (max-height: 690px){
+    .modal-close{
+      top: 10px !important;
+    }
+    .modal-close img{
+        height: 30px;
+        width: 30px;
+        
     }
 }

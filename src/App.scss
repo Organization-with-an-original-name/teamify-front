@@ -6,7 +6,8 @@ $LightBlack: #4C4C4C;
 $DarkBlack:#222222;
 $FormGreen: #27AE60;
 @mixin HeaderBtn{
-    min-width: 149px;
+    width: 149px;
+    height: 62px !important;
     height: auto;
     padding: 15px;
     font-size: 20px;

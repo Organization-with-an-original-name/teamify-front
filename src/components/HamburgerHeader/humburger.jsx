@@ -58,7 +58,7 @@ export default function Humburger(props) {
           <a href="#" className='humburger-bg-link'>lorem</a>
           <div className="header-btns d-flex pt-3">
                 <button className="humburger-btn btn-reg" onClick={props.SetopenR}></button>
-                <button className="humburger-btn btn-log">Login</button>
+                <button className="humburger-btn btn-log"></button>
           </div>
         </div>
       </MDBCollapse>

@@ -66,6 +66,7 @@
     background-color: $Pink;
     color: white;
     border: none;
+    height: 70px !important;
 }
 
 @media screen and (max-width: 1285px) {
@@ -100,6 +101,12 @@
  @media screen and (max-width:370px){
     .banner-text{
         font-size: 36px !important;
+    }
+    .humburger-btn{
+        width: 100px !important;
+    }
+    .header-btns .btn-log::after{
+        left: 23% !important;
     }
     
  }
