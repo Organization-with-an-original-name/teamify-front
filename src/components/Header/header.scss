@@ -124,4 +124,59 @@
     background-color: white;
     transition: transform 5s ease-in;
 }
+.header-username{
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 20px;
+   span{
+    color: rgb(20, 20, 212);
+    text-decoration: underline;
+    font-size: 20px;
+   }
+    img{
+        height: 30px;
+        width: 30px;
+    }
+}
+.btn-logout{
+    @include HeaderBtn();
+    border: 1px solid $Pink;
+    color: $Pink;
+    background-color: transparent;
+    position: relative;
+    &::after{
+        content: 'Log Out';
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        z-index: 3;
+    }
+    &::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background: #da2461;
+        transform: scaleX(0);
+        transition:  0.5s ease-out;
+        transform-origin: 0 0;    
+    }
+    &:hover{
+        &::before{
+            content: '';
+            transform: scaleX(1);
+            color: #fff;
+           
+          
+        }
+        &::after{
+            color: white;
+        }
+    }
 
+}

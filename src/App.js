@@ -18,7 +18,7 @@ function App() {
   const [LogOpen, SetLogOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [userSigned, SetUserSigned] = useState(false);
-
+  const [signed, Setsigned] = useState(false);
   
 
   window.onresize = () =>{
@@ -33,8 +33,8 @@ function App() {
  
   return (
     <div className="root-wrap">
-      <Header SetopenR = {SetRegOpen} width={windowWidth} SetopenL = {SetLogOpen} SetUserSigned = {SetUserSigned} isSigned = {userSigned}/>
-      <Humburger width={windowWidth} SetopenR = {SetRegOpen}/>
+      <Header Setsigned={Setsigned} signed={signed} SetopenR = {SetRegOpen} width={windowWidth} SetopenL = {SetLogOpen} SetUserSigned = {SetUserSigned} isSigned = {userSigned}/>
+      <Humburger Setsigned={Setsigned} signed={signed} width={windowWidth} SetopenR = {SetRegOpen} SetopenL = {SetLogOpen} />
       <Routes>
         <Route path='/' element={ 
              <>
@@ -45,7 +45,7 @@ function App() {
           }>
         </Route>
       </Routes>
-      <ModalReg openR={RegOpen} SetopenR = {SetRegOpen} openL={LogOpen} SetopenL = {SetLogOpen} ></ModalReg>
+      <ModalReg Setsigned={Setsigned} openR={RegOpen} SetopenR = {SetRegOpen} openL={LogOpen} SetopenL = {SetLogOpen} ></ModalReg>
     </div>
   );
 }

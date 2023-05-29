@@ -2,12 +2,15 @@ import React, { useEffect, useRef, useState } from "react";
 import './header.scss';
 import logo from '../../assets/icon/log.png';
 import UserContext from "../../UserContext";
+import hello from '../../assets/icon/hello.png';
+import { deleteUserStatusActionCreator } from "../../Redux/userReducer";
 
 export const Header = function(props){
     const fixedHeader = useRef();
     const header = useRef();
     const RegHandler = props.SetopenR;
     const LogHandler = props.SetopenL;
+    
     
     useEffect(()=>{
         window.onscroll = ()=>{
@@ -35,6 +38,9 @@ export const Header = function(props){
             header.current.style.display = 'block';
         }
     });
+    useEffect(()=>{
+        console.log('header render');
+    }, props.signed)
    
     //----------------------
     return(
@@ -65,7 +71,7 @@ export const Header = function(props){
                                             <button className="btn-reg" onClick={RegHandler}></button>
                                             <button className="btn-log" onClick={LogHandler}></button>
                                         </div>
-                                        {/* "fs": "^0.0.1-security", */}
+                                     
                                     </div>
                                 </div>
                                 <div ref={fixedHeader} className="fixedheader-wrap">
@@ -85,7 +91,7 @@ export const Header = function(props){
                                         </div>
                                         <div className="header-btns d-flex">
                                             <button className="btn-reg" onClick={RegHandler}></button>
-                                            <button className="btn-log"></button>
+                                            <button className="btn-log" onClick={LogHandler}></button>
                                         </div>
                                     </div>
                                 </div>
@@ -110,7 +116,13 @@ export const Header = function(props){
                                                     <li>lorem</li>
                                                 </ul>
                                         </div>
-                                       <div>test</div>
+                                       <div className="header-username"><img src={hello} alt="waving-hand" /> Hello, <span>@{state.user.profile.username}</span></div>
+                                      
+                                       <button className="btn-logout" onClick={()=>{
+                                            user.dispatch(deleteUserStatusActionCreator());
+                                            props.Setsigned(false);
+                                       }}></button>
+                                       
                                        
                                     </div>
                                 </div>
@@ -129,7 +141,11 @@ export const Header = function(props){
                                                     <li>lorem</li>
                                                 </ul>
                                         </div>
-                                       <div>Test</div>
+                                        <div className="header-username"><img src={hello} alt="waving-hand" /> Hello, <span>@{state.user.profile.username}</span></div>
+                                        <button className="btn-logout" onClick={()=>{
+                                            user.dispatch(deleteUserStatusActionCreator());
+                                            props.Setsigned(false);
+                                       }}></button>
                                     </div>
                                 </div>
                             </header>

@@ -50,3 +50,14 @@
    }
    
 }
+@media screen and (max-width:450px){
+    .logo-container{
+        flex-direction: column !important;
+        align-items: normal !important;
+    }
+    .header-username{
+        margin-bottom: 10px;
+    }
+         
+    
+ }

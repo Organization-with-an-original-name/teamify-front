@@ -27,6 +27,28 @@ export const ModalReg = function(props){
     const signUsername= useRef();
     const signPassword= useRef();
     
+    const GetUser = () => {
+        return function(dispatch){
+            fetch('http://18.184.249.86/user/1')
+            .then(response =>{
+                if(response.ok){
+                    return response.json();
+                }
+                else{
+                    alert('This user doesn`t exist. Please, create an account!')
+                }
+            })
+            .then(data =>{
+                dispatch(addUserActionCreator(data));
+                console.log(data)
+                props.Setsigned(true);
+            })
+            .catch(error => {
+            
+              console.log('Error:',error);
+            });
+        }
+}
  
     
     let scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
@@ -225,35 +247,33 @@ export const ModalReg = function(props){
                                                 ready.current.value='';
                                                 loc.current.value = '';
                                                 //--------------
-                                                // fetch('http://18.184.249.86/user', {
-                                                //     method: 'POST',
-                                                //     mode: 'cors',
-                                                //     headers: {
-                                                //       'Content-Type': 'application/json',
-                                                //       'Accept': 'application/json' 
-                                                //     },
-                                                //     body: JSON.stringify(object)
-                                                //   })
-                                                //     .then(response =>{
-                                                //         if(response.ok){
+                                                fetch('http://18.184.249.86/user', {
+                                                    method: 'POST',
+                                                    mode: 'cors',
+                                                    headers: {
+                                                      'Content-Type': 'application/json',
+                                                      'Accept': 'application/json' 
+                                                    },
+                                                    body: JSON.stringify(object)
+                                                  })
+                                                    .then(response =>{
+                                                        if(response.ok){
                                                          
-                                                //             loadUser(object);
+                                                            loadUser(object);
+                                                            props.Setsigned(true);
                                                             
-                                                //             updateUserStatus();
-                                                //             // SetStep(1);
-                                                //             // CloseHandler();
                                                            
                                                             
                                                             
-                                                //         }
-                                                //         else{
-                                                //             alert('Problem')
-                                                //         }
-                                                //     })
-                                                //     .catch(error => {
+                                                        }
+                                                        else{
+                                                            alert('This user already exists!')
+                                                        }
+                                                    })
+                                                    .catch(error => {
                                                       
-                                                //       console.log(error);
-                                                //     });
+                                                        console.error('Error:', error);
+                                                    });
                                                  
                                                   
                                                 //--------------
@@ -305,7 +325,8 @@ export const ModalReg = function(props){
                                                 
                                                 // user.dispatch(asyncfetch());
                                                 //--------------
-                                                user.dispatch(postUser(object));
+                                                // user.dispatch(postUser(object));
+                                               
                                                 
                                                 //--------------
 
@@ -356,21 +377,36 @@ export const ModalReg = function(props){
                                             signUsername.current.value = '';
                                             signPassword.current.value = '';
                                             // SetStep(2);
-                                         
-                                            fetch('http://18.184.249.86/user/1')
-                                            .then(response => response.json())
-                                            .then(data => {
-                                              // Обробка отриманих даних
-                                              console.log(data);
-                                           
-                                              loadUser(data);
-                                            })
-                                            .catch(error => {
-                                              // Обробка помилок
-                                              console.error('Виникла помилка:', error);
-                                            });
+                                            //--------------------------
+                                            // fetch('http://18.184.249.86/user/1')
+                                            // .then(response => {
+                                            //     if(response.ok){
+                                                    
+                                            //         object= response.json();
+                                            //         console.log('objkect:',object)
+                                            //         loadUser(object);
+                                            //         props.Setsigned(true);
+                                            //     }
+                                            //     else{
+                                            //         alert('This user doesn`t exist. Please, create account! ')
+                                            //     }
+                                               
+
+                                            // })
+                                          
+                                            // .catch(error => {
+                                            //   // Обробка помилок
+                                            //   console.error('Error:', error);
+                                            // });
+                                            //--------------------------
+                                            user.dispatch(GetUser());
+                                            
+
+
+                                            //--------------------------
+
                                             // loadUser(userProfile);
-                                            updateUserStatus();
+                                            // updateUserStatus();
                                             CloseHandlerL();
                                             
                                         }}>Log In</button>
