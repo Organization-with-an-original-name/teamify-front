@@ -1,20 +1,29 @@
 {
   "files": {
-    "main.css": "/teamify-front/static/css/main.6e253dc6.css",
-    "main.js": "/teamify-front/static/js/main.ba84d765.js",
+    "main.css": "/teamify-front/static/css/main.e0638313.css",
+    "main.js": "/teamify-front/static/js/main.1cf6208f.js",
     "static/js/787.de905a5d.chunk.js": "/teamify-front/static/js/787.de905a5d.chunk.js",
+    "static/media/pointedleft.png": "/teamify-front/static/media/pointedleft.33de0a8395366b2f935d.png",
     "static/media/crteam.webp": "/teamify-front/static/media/crteam.0785adfd9df3d0856d74.webp",
     "static/media/banner.webp": "/teamify-front/static/media/banner.52cc43a806208f89e633.webp",
+    "static/media/business-people-team-boss-hold-binoculars-teamwork-banner_48369-10865.avif": "/teamify-front/static/media/business-people-team-boss-hold-binoculars-teamwork-banner_48369-10865.628036f8c081cde6a5a2.avif",
+    "static/media/wallpaper.jpg": "/teamify-front/static/media/wallpaper.4e45584031cdc6d78aef.jpg",
     "static/media/hello.png": "/teamify-front/static/media/hello.035bc408ee23034e6818.png",
     "static/media/close.png": "/teamify-front/static/media/close.d6a3b3b6496e0f6deeea.png",
+    "static/media/tg.png": "/teamify-front/static/media/tg.e9722f26cc228e817986.png",
+    "static/media/check.png": "/teamify-front/static/media/check.0e163e83492acb677d72.png",
     "static/media/tour-icon.png": "/teamify-front/static/media/tour-icon.937a68ced19aad04f009.png",
+    "static/media/human.jpeg": "/teamify-front/static/media/human.0dd0bfca88542b56242f.jpeg",
+    "static/media/inst.png": "/teamify-front/static/media/inst.75e0546a6b5abe4c0506.png",
+    "static/media/exclamation.png": "/teamify-front/static/media/exclamation.02f31f5c44281e6f98bb.png",
+    "static/media/linked.png": "/teamify-front/static/media/linked.f249b38224ca41a0b909.png",
     "index.html": "/teamify-front/index.html",
-    "main.6e253dc6.css.map": "/teamify-front/static/css/main.6e253dc6.css.map",
-    "main.ba84d765.js.map": "/teamify-front/static/js/main.ba84d765.js.map",
+    "main.e0638313.css.map": "/teamify-front/static/css/main.e0638313.css.map",
+    "main.1cf6208f.js.map": "/teamify-front/static/js/main.1cf6208f.js.map",
     "787.de905a5d.chunk.js.map": "/teamify-front/static/js/787.de905a5d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6e253dc6.css",
-    "static/js/main.ba84d765.js"
+    "static/css/main.e0638313.css",
+    "static/js/main.1cf6208f.js"
   ]
 }
