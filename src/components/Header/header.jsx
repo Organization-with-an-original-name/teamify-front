@@ -4,12 +4,15 @@ import logo from '../../assets/icon/log.png';
 import UserContext from "../../UserContext";
 import hello from '../../assets/icon/hello.png';
 import { deleteUserStatusActionCreator } from "../../Redux/userReducer";
+import { Link, NavLink } from "react-router-dom";
+
 
 export const Header = function(props){
     const fixedHeader = useRef();
     const header = useRef();
     const RegHandler = props.SetopenR;
     const LogHandler = props.SetopenL;
+    const links = useRef();
     
     
     useEffect(()=>{
@@ -55,7 +58,7 @@ export const Header = function(props){
                                 <div className="header-wrap">
                                     <div className="header-container d-flex align-items-center p-0">
                                         <div className="logo-container d-flex align-items-center">
-                                            <img className="header-logo img-fluid" src={logo} alt="logo" />
+                                           <Link to ='/'><img className="header-logo img-fluid" src={logo} alt="logo" /></Link>
                                             <h4 className="logo-title"><span>Find your</span><br /> perfect team</h4>
                                         </div>
                                         <div className="header-links d-flex m-0">
@@ -64,7 +67,9 @@ export const Header = function(props){
                                                     <li>lorem</li>
                                                     <li>lorem</li>
                                                     <li>lorem</li>
-                                                    <li>lorem</li>
+                                                    <li onClick={()=>{
+                                                        alert('Sign in or create an account!')
+                                                    }}>My account</li>
                                                 </ul>
                                         </div>
                                         <div className="header-btns d-flex">
@@ -77,7 +82,7 @@ export const Header = function(props){
                                 <div ref={fixedHeader} className="fixedheader-wrap">
                                     <div className="header-container d-flex align-items-center p-0">
                                         <div className="logo-container d-flex align-items-center">
-                                            <img className="header-logo img-fluid" src={logo} alt="logo" />
+                                        <Link to ='/'><img className="header-logo img-fluid" src={logo} alt="logo" /></Link>
                                             <h4 className="logo-title"><span>Find your</span><br /> perfect team</h4>
                                         </div>
                                         <div className="header-links d-flex m-0">
@@ -86,7 +91,9 @@ export const Header = function(props){
                                                     <li>lorem</li>
                                                     <li>lorem</li>
                                                     <li>lorem</li>
-                                                    <li>lorem</li>
+                                                    <li onClick={()=>{
+                                                        alert('Sign in or create an account!')
+                                                    }}>My account</li>
                                                 </ul>
                                         </div>
                                         <div className="header-btns d-flex">
@@ -104,16 +111,19 @@ export const Header = function(props){
                                 <div className="header-wrap">
                                     <div className="header-container d-flex align-items-center p-0">
                                         <div className="logo-container d-flex align-items-center">
-                                            <img className="header-logo img-fluid" src={logo} alt="logo" />
+                                        <Link to ='/'><img className="header-logo img-fluid" src={logo} alt="logo" /></Link>
                                             <h4 className="logo-title"><span>Find your</span><br /> perfect team</h4>
                                         </div>
                                         <div className="header-links d-flex m-0">
-                                                <ul className="p-0 m-0">
+                                                <ul ref={links} className="p-0 m-0">
                                                     <li>lorem</li>
                                                     <li>lorem</li>
                                                     <li>lorem</li>
-                                                    <li>lorem</li>
-                                                    <li>lorem</li>
+                                                    <li>loremd</li>
+                                                    {/* <li><Link_ path='/my-profile' text='My account'></Link_></li> */}
+                                                    
+                                                    <li><NavLink  to='/my-profile'>My account</NavLink></li>
+                                                    
                                                 </ul>
                                         </div>
                                        <div className="header-username"><img src={hello} alt="waving-hand" /> Hello, <span>@{state.user.profile.username}</span></div>
@@ -129,7 +139,7 @@ export const Header = function(props){
                                 <div ref={fixedHeader} className="fixedheader-wrap">
                                     <div className="header-container d-flex align-items-center p-0">
                                         <div className="logo-container d-flex align-items-center">
-                                            <img className="header-logo img-fluid" src={logo} alt="logo" />
+                                        <Link to ='/'><img className="header-logo img-fluid" src={logo} alt="logo" /></Link>
                                             <h4 className="logo-title"><span>Find your</span><br /> perfect team</h4>
                                         </div>
                                         <div className="header-links d-flex m-0">
@@ -138,7 +148,8 @@ export const Header = function(props){
                                                     <li>lorem</li>
                                                     <li>lorem</li>
                                                     <li>lorem</li>
-                                                    <li>lorem</li>
+                                                    <li><Link to='/my-profile'>My account</Link></li>
+                                            
                                                 </ul>
                                         </div>
                                         <div className="header-username"><img src={hello} alt="waving-hand" /> Hello, <span>@{state.user.profile.username}</span></div>

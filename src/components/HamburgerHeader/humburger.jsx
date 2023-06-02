@@ -13,6 +13,7 @@ import logo from '../../assets/icon/log.png';
 import {IoMdMenu} from 'react-icons/io';
 import UserContext from '../../UserContext';
 import { deleteUserStatusActionCreator } from '../../Redux/userReducer';
+import { Link } from 'react-router-dom';
 
 export default function Humburger(props) {
   const [showNavExternal3, setShowNavExternal3] = useState(false);
@@ -24,7 +25,7 @@ export default function Humburger(props) {
         humburger.current.style.display = 'none';
     }
     else{
-        humburger.current.style.display = 'block';
+        humburger.current.style.display = 'block'; 
     }
   });
   useEffect(()=>{
@@ -39,7 +40,7 @@ export default function Humburger(props) {
             return (
               <div ref={humburger} className='humburger mb-2'>
                 <div className="logo-container d-flex align-items-center">
-                      <img className="header-logo img-fluid" src={logo} alt="logo" />
+                <Link to ='/'><img className="header-logo img-fluid" src={logo} alt="logo" /></Link>
                       <h4 className="logo-title"><span>Find your</span><br /> perfect team</h4>
                   </div>
                 <MDBNavbar>
@@ -66,7 +67,9 @@ export default function Humburger(props) {
                     <a href="#" className='humburger-bg-link'>lorem</a>
                     <a href="#" className='humburger-bg-link'>lorem</a>
                     <a href="#" className='humburger-bg-link'>lorem</a>
-                    <a href="#" className='humburger-bg-link'>lorem</a>
+                    <li onClick={()=>{
+                        alert('Sign in or create an account!')
+                    }}>My account</li>
                     <div className="header-btns d-flex pt-3">
                           <button className="humburger-btn btn-reg" onClick={RegHandler}></button>
                           <button className="humburger-btn btn-log" onClick={LogHandler}></button>
@@ -81,7 +84,7 @@ export default function Humburger(props) {
               <div ref={humburger} className='humburger mb-2'>
                 <div className="logo-container d-flex align-items-center justify-content-between">
                       <div className="header-logo-container d-flex align-items-center ">
-                        <img className="header-logo img-fluid" src={logo} alt="logo" />
+                      <Link to ='/'><img className="header-logo img-fluid" src={logo} alt="logo" /></Link>
                         <h4 className="logo-title"><span>Find your</span><br /> perfect team</h4>
                       </div>
                       
@@ -112,7 +115,7 @@ export default function Humburger(props) {
                     <a href="#" className='humburger-bg-link'>lorem</a>
                     <a href="#" className='humburger-bg-link'>lorem</a>
                     <a href="#" className='humburger-bg-link'>lorem</a>
-                    <a href="#" className='humburger-bg-link'>lorem</a>
+                    <li className='humburger-bg-link'><Link to='/my-profile'>My account</Link></li>
                     <button className="btn-logout" onClick={()=>{
                       user.dispatch(deleteUserStatusActionCreator()); 
                       props.Setsigned(false);

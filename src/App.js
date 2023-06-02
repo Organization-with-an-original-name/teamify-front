@@ -11,6 +11,14 @@ import { useContext, useEffect, useState } from 'react';
 import Humburger from './components/HamburgerHeader/humburger';
 import {Routes, Route, BrowserRouter} from 'react-router-dom';
 import  UserContext  from './UserContext';
+import Profile from './components/Profile/profile';
+import CreateTeamPage from './components/CreateTeamPage/CrTeamPage';
+
+// window.onl= function() {
+//   // Змінюємо URL шлях на новий
+//   var newPath = "/teamify-front";
+//   window.location.replace(newPath + window.location.search);
+// };
 
 
 function App() {
@@ -19,6 +27,7 @@ function App() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [userSigned, SetUserSigned] = useState(false);
   const [signed, Setsigned] = useState(false);
+  
   
 
   window.onresize = () =>{
@@ -44,6 +53,17 @@ function App() {
              </>
           }>
         </Route>
+        <Route path='/my-profile' element={
+          <>
+            <Profile />
+          </>
+        }> 
+        </Route>
+        <Route path='/create-team' element={
+          <>
+            <CreateTeamPage />
+          </>
+        }></Route>
       </Routes>
       <ModalReg Setsigned={Setsigned} openR={RegOpen} SetopenR = {SetRegOpen} openL={LogOpen} SetopenL = {SetLogOpen} ></ModalReg>
     </div>

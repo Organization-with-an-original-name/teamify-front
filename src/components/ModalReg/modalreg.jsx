@@ -259,8 +259,9 @@ export const ModalReg = function(props){
                                                     .then(response =>{
                                                         if(response.ok){
                                                          
-                                                            loadUser(object);
-                                                            props.Setsigned(true);
+                                                            // loadUser(object);
+                                                            // props.Setsigned(true);
+                                                            alert('Registration completed! Sign in, please');
                                                             
                                                            
                                                             

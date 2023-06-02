@@ -1,5 +1,6 @@
 import React from "react";
 import './createteam.scss';
+import { Link } from "react-router-dom";
 
 export const Createteam = function (){
     return(
@@ -8,7 +9,7 @@ export const Createteam = function (){
                 <div className="createteam-items">
                     <h4 className="createteam-undertitle">Lorem ipsum dolor sit amet</h4>
                     <h1 className="createteam-title mb-5">Create your own team and enjoy your experiance now!</h1>
-                    <button className="createteam-btn">Create Team</button>
+                    <Link className="createteam-btn" to='/create-team'>Create Team</Link>
                 </div>
             </div>
         </section>

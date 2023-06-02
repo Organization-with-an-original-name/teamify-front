@@ -1,0 +1,126 @@
+@import '../../App.scss';
+
+.create-team-page-head{
+    border-bottom: 1px solid gray;
+
+    h2{
+        padding-bottom: 30px;
+        color: $DarkGray;
+    }
+}
+.create-team-page-wrap{
+    height: 900px;
+}
+.create-team-page-banner{
+    height: 250px;
+    background: url('../../assets/img/business-people-team-boss-hold-binoculars-teamwork-banner_48369-10865.avif');
+    background-size: cover;
+    background-position: center;
+}
+.create-team-page-text{
+    color: $DarkGray;
+    font-size: 18px;
+    padding-top: 10px;
+}
+.pointed-man{
+    // background: url('../../assets/img/pointedleft.png') no-repeat;
+    // background-position: left;
+    height: 600px;
+    // background-size: contain;
+    position: relative;
+    img{
+        height: 600px;
+        width: auto;
+        position: absolute;
+        left: -40%;
+    }
+}
+.create-team-page-head-form{
+    // background-color: rgb(238, 232, 232);
+    padding: 30px;
+    // border: 1px solid $DarkGray;
+    
+  
+    
+}
+.form-title{
+    color: $DarkGray;
+}
+.form-input{
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    border: solid 2px $LightBlack;
+
+  
+   
+    padding: 0 1em;
+    text-decoration: none;
+    width: 100%;
+    margin-bottom: 30px;    
+}
+.form-textarea{
+    height: 120px;
+ 
+    padding-top: 10px;
+   
+}
+.form-submit{
+    @include HeaderBtn();
+    background-color: $Pink;
+    color: white;
+    border: none;
+    position: relative;
+    &::after{
+        content: 'Create';
+        position: absolute;
+        top: 25%;
+        left: 28%;
+        z-index: 3;
+    }
+    &::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background: #da2461;
+        transform: scaleX(0);
+        transition:  0.5s ease-out;
+        transform-origin: 0 0;    
+    }
+    &:hover{
+        &::before{
+            content: '';
+            transform: scaleX(1);
+            color: #fff;
+           
+          
+        }
+    }
+}
+@media screen and (max-width:1345px){
+   .pointed-man-img{
+        height: 450px !important;
+   }
+   
+ }
+@media screen and (max-width:1000px){
+    .pointed-man-img{
+        display: none !important;
+    }
+    .create-team-page-head-form{
+        flex-basis: 100%;
+    }
+    
+}
+@media screen and (max-width:670px){
+    .create-team-page-banner{
+        display: none !important;
+    }
+    .create-team-page-text{
+        font-size: 14px !important;
+    }
+    
+  }

@@ -32,6 +32,12 @@
             color: $DarkBlue;
             font-size: 18px;
         }
+        a{
+            color: $DarkBlue;
+            font-size: 18px;
+            text-decoration: none;
+            cursor: pointer;
+        }
     }
 }
 .header-btns{
@@ -179,4 +185,10 @@
         }
     }
 
+}
+
+li .active{
+  transition: padding .2s linear;
+  border-bottom: 2px solid $HoverColor;
+  padding-bottom: 10px;
 }
