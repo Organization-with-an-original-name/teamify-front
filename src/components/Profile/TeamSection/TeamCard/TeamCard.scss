@@ -1,0 +1,103 @@
+.teamcard-wrap{
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+.teamcard-name{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+    h4{
+        padding-left: 35px;
+        font-size: 22px;
+        font-weight: 400;
+
+    }
+    p{
+        font-size: 22px;
+        font-weight: 600;
+        
+    }
+    
+}
+// --------------
+
+.disp-block{
+    display: block !important;
+}
+.collapse-text{
+    border-top:  1px solid #DFDFDF;
+    padding: 15px 35px;
+    display: none;
+
+}
+.collapse-body{
+    border: 1px solid #DFDFDF;
+    background-color: white;
+  
+
+    .collapse-title{
+        font-size: 22px;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        padding: 10px 35px;
+   
+   
+        
+      
+    
+        justify-content: space-between;
+        .notcollapsed-btn{
+            transform: rotate(180deg);
+            fill: black;
+            transition: all .2s ease;
+        }
+        
+    }
+    
+    
+
+}
+.collapsed-btn{
+    transform: rotate(0deg) !important;
+    fill: #0c63e4 !important; 
+}
+.collapse-title-active{
+    transition: all .2s ease;
+    background-color: rgb(231, 241, 255);
+    color: #2573E7;
+
+    
+
+}
+@media screen and (max-width:360px){
+    .teamcard-name{
+        h4{
+            padding-left: 35px;
+            font-size: 18px !important;
+            font-weight: 400;
+    
+        }
+        p{
+            font-size: 18px !important;
+            font-weight: 600;
+            
+        }
+        
+    }
+    .collapse-title{
+        font-size: 18px !important;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        padding: 10px 35px;
+   
+    }
+    .collapse-text{
+        font-size: 14px !important;
+    
+    }
+}

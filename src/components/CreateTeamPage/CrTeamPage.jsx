@@ -3,6 +3,7 @@ import './CrTeamPage.scss';
 import UserContext from "../../UserContext";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import pointed from '../../assets/img/pointedleft.png';
+import { createTeamActionCreator } from "../../Redux/userReducer";
 
 
 const CreateTeamPage = function(props){
@@ -14,30 +15,34 @@ const CreateTeamPage = function(props){
     let object = {};
     // object.leaderId = 
 
-    const CreateHandler = function (){
+    const CreateHandler = function (acessToken){
+       return function(dispatch){
         fetch('http://18.184.249.86/team', {
-        method: 'POST',
-        mode: 'cors',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json' 
-        },
-        body: JSON.stringify(object)
-      })
-        .then(response =>{
-            if(response.ok){
-                alert('Team was created!');
-                navigate('/');
-            
-            }   
-            else{
-                alert('This team already exists!')
-            }
-        })
-        .catch(error => {
-          
-            console.error('Error:', error);
-        });
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',
+              "Access-token" : acessToken
+            },
+            body: JSON.stringify(object)
+          })
+            .then(response =>{
+                if(response.ok){
+                    alert('Team was created!');
+                    dispatch(createTeamActionCreator(object))
+                    navigate('/');
+                
+                }   
+                else{
+                    alert('This team already exists!')
+                }
+            })
+            .catch(error => {
+              
+                console.error('Error:', error);
+            });
+       }
     }
     const ClearInputs = function(){
         inputs.forEach(input => input.current.value = '');
@@ -72,7 +77,7 @@ const CreateTeamPage = function(props){
                                                 object.description = e.target.value;
                                             }} ></textarea>
                                             <button onClick={()=>{
-                                                CreateHandler();
+                                                user.dispatch(CreateHandler(state.user.accessToken));
                                                 ClearInputs();
                                               
                                                 

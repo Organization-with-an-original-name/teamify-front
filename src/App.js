@@ -13,6 +13,7 @@ import {Routes, Route, BrowserRouter} from 'react-router-dom';
 import  UserContext  from './UserContext';
 import Profile from './components/Profile/profile';
 import CreateTeamPage from './components/CreateTeamPage/CrTeamPage';
+import SearchResults from './components/SearchResults/search';
 
 // window.onl= function() {
 //   // Змінюємо URL шлях на новий
@@ -62,6 +63,11 @@ function App() {
         <Route path='/create-team' element={
           <>
             <CreateTeamPage />
+          </>
+        }></Route>
+        <Route path='/search-results' element={
+          <>
+            <SearchResults />
           </>
         }></Route>
       </Routes>

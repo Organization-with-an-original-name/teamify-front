@@ -114,7 +114,7 @@ export default function Humburger(props) {
                     <a href="#" className='humburger-bg-link'>lorem</a>
                     <a href="#" className='humburger-bg-link'>lorem</a>
                     <a href="#" className='humburger-bg-link'>lorem</a>
-                    <a href="#" className='humburger-bg-link'>lorem</a>
+                    <li className='humburger-bg-link'><Link to='/create-team'>Create Team</Link></li>
                     <li className='humburger-bg-link'><Link to='/my-profile'>My account</Link></li>
                     <button className="btn-logout" onClick={()=>{
                       user.dispatch(deleteUserStatusActionCreator()); 

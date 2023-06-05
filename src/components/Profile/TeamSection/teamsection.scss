@@ -1,0 +1,43 @@
+.team-section{
+    margin-top: 240px;
+}
+.team-section-title{
+    text-align: center;
+}
+.team-section-container{
+    width: 70%;
+    margin: 0 auto;
+}
+.team-section-container{
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+@media screen and (max-width:1230px){
+    .team-section{
+        margin-top: 280px;
+    }
+    
+}
+@media screen and (max-width:1090px){
+    .team-section{
+        margin-top: 50px;
+    }
+    
+}
+@media screen and (max-width:730px){
+    .team-section-container{
+        width: 95%;
+        margin: 0 auto;
+    }
+    
+}
+@media screen and (max-width:730px){
+    .team-section-container{
+        width: 100%;
+        padding: 5px !important;
+  
+    }
+    
+}

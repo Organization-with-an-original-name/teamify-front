@@ -4,7 +4,7 @@ import { createPortal } from 'react-dom';
 import close from '../../assets/icon/close.png';
 import { json } from "react-router-dom";
 import UserContext from "../../UserContext";
-import { addUserActionCreator, updateUserStatusActionCreator } from "../../Redux/userReducer";
+import { addUserActionCreator, createTeamActionCreator, loadAccessTokenActionCreator, updateUserStatusActionCreator } from "../../Redux/userReducer";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { postUser } from "../../asyncActions/postuser";
@@ -27,28 +27,97 @@ export const ModalReg = function(props){
     const signUsername= useRef();
     const signPassword= useRef();
     
-    const GetUser = () => {
-        return function(dispatch){
-            fetch('http://18.184.249.86/user/1')
-            .then(response =>{
-                if(response.ok){
-                    return response.json();
-                }
-                else{
-                    alert('This user doesn`t exist. Please, create an account!')
-                }
-            })
-            .then(data =>{
-                dispatch(addUserActionCreator(data));
-                console.log(data)
-                props.Setsigned(true);
-            })
-            .catch(error => {
+//     const GetUser = () => {
+//         return function(dispatch){
+//             fetch('http://18.184.249.86/user/1')
+//             .then(response =>{
+//                 if(response.ok){
+//                     return response.json();
+//                 }
+//                 else{
+//                     alert('This user doesn`t exist. Please, create an account!')
+//                 }
+//             })
+//             .then(data =>{
+//                 dispatch(addUserActionCreator(data));
+//                 console.log(data)
+//                 props.Setsigned(true);
+//             })
+//             .catch(error => {
             
-              console.log('Error:',error);
-            });
+//               console.log('Error:',error);
+//             });
+//         }
+// }
+    function GetUser(username, password){
+       return function(dispatch){
+        fetch("http://18.184.249.86/login",{
+            method: "POST",
+            mode : "cors",
+            headers:{
+                  "Content-type": "application/json",
+                  "Accept":"application/json"
+            },
+            body: JSON.stringify({
+                  username: username,
+                  password: password
+            })
+        })
+        .then((response) => {
+            if(response.ok){
+                return response.text();
+            }
+            else{
+                alert('Wrong password or login');
+            }
+        })
+        
+       
+        .then(token => {
+            dispatch(loadAccessTokenActionCreator(token));
+            dispatch(getCurrentUser(token));
+
+        })
+       
+
+       }
+    }
+
+    function getCurrentUser(acessToken){
+        return function(dispatch){
+            fetch("http://18.184.249.86/user/current",{
+              method: "GET",
+              mode : "cors",
+              headers:{
+                    "Content-type": "application/json",
+                    "Accept":"application/json",
+                    "Access-token" : acessToken
+              }
+        })
+        .then((response) => response.json())
+        .then(body =>{
+            console.log('Body:', body);
+            dispatch(addUserActionCreator(body));
+            props.Setsigned(true);
+           
+        })
+        }     
+    }
+    const LoadTeams = function(id){
+        return function(dispatch){
+           fetch(`http://18.184.249.86/team?${id}`, {
+           })
+          .then(response => response.json())
+          .then(data =>{
+               data.forEach(item => dispatch(createTeamActionCreator(item)));
+           
+               return data;
+          })
+          .catch(error => {
+              console.error('Error:', error);
+          });
         }
-}
+    }  
  
     
     let scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
@@ -121,7 +190,7 @@ export const ModalReg = function(props){
                                             <input ref={password} type='password' placeholder="Password" />
                                             <button ref={btn} onClick={()=>{
                                                 object.username = username.current.value;
-                                                // object.password = password.current.value;
+                                                object.password = password.current.value;
                                                 username.current.value = '';
                                                 password.current.value = '';
                                                 SetStep(2);
@@ -375,8 +444,7 @@ export const ModalReg = function(props){
                                         <button ref={btn} onClick={()=>{
                                             // object.username = username.current.value;
                                             // // object.password = password.current.value;
-                                            signUsername.current.value = '';
-                                            signPassword.current.value = '';
+                                           
                                             // SetStep(2);
                                             //--------------------------
                                             // fetch('http://18.184.249.86/user/1')
@@ -400,7 +468,12 @@ export const ModalReg = function(props){
                                             //   console.error('Error:', error);
                                             // });
                                             //--------------------------
-                                            user.dispatch(GetUser());
+                                            // user.dispatch(GetUser()); !!!!!!!!!!!!!!
+                                    
+                                            user.dispatch(GetUser(signUsername.current.value, signPassword.current.value));
+                                            user.dispatch(LoadTeams(state.user.profile.id));
+                                            signUsername.current.value = '';
+                                            signPassword.current.value = '';
                                             
 
 

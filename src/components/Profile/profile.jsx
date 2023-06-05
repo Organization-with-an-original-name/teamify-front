@@ -9,16 +9,34 @@ import linked from '../../assets/icon/linked.png';
 import tg from '../../assets/icon/tg.png';
 import avaliable from '../../assets/icon/check.png';
 import Notavaliable from '../../assets/icon/exclamation.png';
+import TeamSection from "./TeamSection/teamsection";
+import { createTeamActionCreator } from "../../Redux/userReducer";
 
 
 function Profile (props) {
 
+    // const LoadTeams = function(id){
+    //     return function(dispatch){
+    //        fetch(`http://18.184.249.86/team?${id}`, {
+    //        })
+    //       .then(response => response.json())
+    //       .then(data =>{
+    //            data.forEach(item => dispatch(createTeamActionCreator(item)));
+           
+    //            return data;
+    //       })
+    //       .catch(error => {
+    //           console.error('Error:', error);
+    //       });
+    //     }
+    // }  
 
     return(
        <UserContext.Consumer>
             {
                 (user) =>{
                     let profile = user.getState().user.profile;
+                    // user.dispatch(LoadTeams(profile.id))
                     return(
                         <section className="profile mt-5">
                             <div className="profile-wrap">
@@ -88,7 +106,7 @@ function Profile (props) {
                                     </div>
                                 </div>
 
-
+                                    <TeamSection />
 
                             </div>
                         </section>

@@ -4,7 +4,7 @@ import logo from '../../assets/icon/log.png';
 import UserContext from "../../UserContext";
 import hello from '../../assets/icon/hello.png';
 import { deleteUserStatusActionCreator } from "../../Redux/userReducer";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 
 export const Header = function(props){
@@ -13,6 +13,7 @@ export const Header = function(props){
     const RegHandler = props.SetopenR;
     const LogHandler = props.SetopenL;
     const links = useRef();
+    const navigate = useNavigate();
     
     
     useEffect(()=>{
@@ -119,7 +120,7 @@ export const Header = function(props){
                                                     <li>lorem</li>
                                                     <li>lorem</li>
                                                     <li>lorem</li>
-                                                    <li>loremd</li>
+                                                    <li><NavLink  to='/create-team'>Create Team</NavLink></li>
                                                     {/* <li><Link_ path='/my-profile' text='My account'></Link_></li> */}
                                                     
                                                     <li><NavLink  to='/my-profile'>My account</NavLink></li>
@@ -131,6 +132,7 @@ export const Header = function(props){
                                        <button className="btn-logout" onClick={()=>{
                                             user.dispatch(deleteUserStatusActionCreator());
                                             props.Setsigned(false);
+                                            navigate('/');
                                        }}></button>
                                        
                                        
@@ -147,7 +149,7 @@ export const Header = function(props){
                                                     <li>lorem</li>
                                                     <li>lorem</li>
                                                     <li>lorem</li>
-                                                    <li>lorem</li>
+                                                    <li><NavLink  to='/create-team'>Create Team</NavLink></li>
                                                     <li><Link to='/my-profile'>My account</Link></li>
                                             
                                                 </ul>
@@ -156,6 +158,7 @@ export const Header = function(props){
                                         <button className="btn-logout" onClick={()=>{
                                             user.dispatch(deleteUserStatusActionCreator());
                                             props.Setsigned(false);
+                                            navigate('/');
                                        }}></button>
                                     </div>
                                 </div>
