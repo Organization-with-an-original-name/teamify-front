@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/teamify-front/static/css/main.e0638313.css",
-    "main.js": "/teamify-front/static/js/main.1cf6208f.js",
+    "main.css": "/teamify-front/static/css/main.a3ea789c.css",
+    "main.js": "/teamify-front/static/js/main.34cc64c1.js",
     "static/js/787.de905a5d.chunk.js": "/teamify-front/static/js/787.de905a5d.chunk.js",
     "static/media/pointedleft.png": "/teamify-front/static/media/pointedleft.33de0a8395366b2f935d.png",
     "static/media/crteam.webp": "/teamify-front/static/media/crteam.0785adfd9df3d0856d74.webp",
@@ -18,12 +18,12 @@
     "static/media/exclamation.png": "/teamify-front/static/media/exclamation.02f31f5c44281e6f98bb.png",
     "static/media/linked.png": "/teamify-front/static/media/linked.f249b38224ca41a0b909.png",
     "index.html": "/teamify-front/index.html",
-    "main.e0638313.css.map": "/teamify-front/static/css/main.e0638313.css.map",
-    "main.1cf6208f.js.map": "/teamify-front/static/js/main.1cf6208f.js.map",
+    "main.a3ea789c.css.map": "/teamify-front/static/css/main.a3ea789c.css.map",
+    "main.34cc64c1.js.map": "/teamify-front/static/js/main.34cc64c1.js.map",
     "787.de905a5d.chunk.js.map": "/teamify-front/static/js/787.de905a5d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e0638313.css",
-    "static/js/main.1cf6208f.js"
+    "static/css/main.a3ea789c.css",
+    "static/js/main.34cc64c1.js"
   ]
 }
