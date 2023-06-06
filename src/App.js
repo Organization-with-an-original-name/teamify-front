@@ -14,6 +14,7 @@ import  UserContext  from './UserContext';
 import Profile from './components/Profile/profile';
 import CreateTeamPage from './components/CreateTeamPage/CrTeamPage';
 import TeamSearch from './components/TeamSearch/teamsearch';
+import History from './components/History/history';
 // import SearchResults from './components/SearchResults/search';
 
 // window.onl= function() {
@@ -70,6 +71,11 @@ function App() {
         <Route path='/team-search' element={
           <>
             <TeamSearch />
+          </>
+        }></Route>
+        <Route path='/application-history' element={
+          <>
+            <History /> 
           </>
         }></Route>
       </Routes>

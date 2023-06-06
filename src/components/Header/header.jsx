@@ -119,7 +119,7 @@ export const Header = function(props){
                                                 <ul ref={links} className="p-0 m-0">
                                                     <li>lorem</li>
                                                     <li>lorem</li>
-                                                    <li>lorem</li>
+                                                    <li><NavLink  to='/application-history'>History</NavLink></li>
                                                     <li><NavLink  to='/create-team'>Create Team</NavLink></li>
                                                     {/* <li><Link_ path='/my-profile' text='My account'></Link_></li> */}
                                                     

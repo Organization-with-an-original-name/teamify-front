@@ -1,0 +1,42 @@
+@import '../../App.scss';
+.history-title{
+    font-weight: 500;
+    border-bottom: 1px solid black;
+}
+.hisitem, .assitem{
+    border: 1px solid gray;
+}
+.hisitem-icon{
+   img{
+    width: 30px;
+    height: 30px;
+   }
+}
+.team-name, .username{
+    font-weight: 900;
+}
+.history-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.hisitem-controls{
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 40px;
+    gap: 20px;
+}
+.hisitem-controls-btn{
+    width: 60px;
+    height: 40px;
+    border: none;
+    color: white;
+}
+
+.btn-yes{
+    background-color: $FormGreen;
+}
+.btn-no{
+    background-color: red;
+}

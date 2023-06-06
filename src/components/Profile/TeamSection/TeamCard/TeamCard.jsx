@@ -14,7 +14,7 @@ const TeamCard = function(props){
                     <h4 className="m-0">Name:</h4>
                     <p className="m-0">"{props.data.name}"</p>
                 </div>
-                <Collapse description={props.data.description}/>
+                <Collapse description={props.data.description} id={props.data.leaderId}/>
                
                
                
@@ -50,7 +50,8 @@ export function Collapse (props){
     return(
         <div className="collapse-body d-flex flex-column">
             <h4 ref={title} className="collapse-title m-0" onClick={()=>Setcollapsed(!collapsed)}>Description <svg ref={colbtn} onClick={()=>Setcollapsed(!collapsed)} className="notcollapsed-btn" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="m2.5 15.25l7.5-7.5l7.5 7.5l1.5-1.5l-9-9l-9 9z"/></svg></h4>
-            <p ref={descr} className="collapse-text">{props.description}</p>
+            <p ref={descr} className="collapse-text">{props.id}</p>
+            {/* <p>{props.leaderId}</p> */}
         </div> 
     );
 }

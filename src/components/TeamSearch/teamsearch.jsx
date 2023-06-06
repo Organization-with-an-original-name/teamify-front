@@ -61,6 +61,35 @@ const TeamSearch = function(props){
 }
 
 const TeamSCard = function(props){
+    const [sended, UseSended] = useState(false);
+
+    const postRequestHandler = function(id, acessToken){
+        fetch('http://18.184.249.86/application',{
+            method: "POST",
+            mode : "cors",
+            headers:{
+                  "Content-type": "application/json",
+                  "Accept":"application/json",
+                  "Access-token" : acessToken
+            },
+            body: JSON.stringify({
+                  teamId: id
+              
+            })
+        })
+        .then(response => {
+            if(response.ok){
+                alert('Application was sent!');
+                UseSended(true);
+            }
+            else{
+                alert('Some error was occured!')
+            }
+        })
+        .catch(error => console.log('Error:', error))
+
+        }
+    
     return(
         <UserContext.Consumer>
             {
@@ -68,7 +97,7 @@ const TeamSCard = function(props){
                     let state = user.getState();
                    
                     return(
-                        props.data.leaderId === state.user.profile.id?
+                        props.data.leaderId === state.user.profile.id || sended === true?
                         <div className="teamcard">
                             <div className="teamcard-wrap bg-light">
                                 <div className="teamcard-name d-flex">
@@ -88,7 +117,10 @@ const TeamSCard = function(props){
                                     <h4 className="m-0">Name:</h4>
                                     <p className="m-0">"{props.data.name}"</p>
                                     <div className="teamcard-sub">
-                                        <button className="teamcard-sub-btn">Send request</button>
+                                        <button className="teamcard-sub-btn"onClick={()=>{
+                                            console.log('state:',state.user.accessToken);
+                                            postRequestHandler(props.data.id, state.user.accessToken);
+                                        }} >Send request</button>
                                     </div>
                                 </div>
                                 <Collapse description={props.data.description}/>

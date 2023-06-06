@@ -104,21 +104,22 @@ export const ModalReg = function(props){
         })
         }     
     }
-    const LoadTeams = function(id){
-        return function(dispatch){
-           fetch(`http://18.184.249.86/team?${id}`, {
-           })
-          .then(response => response.json())
-          .then(data =>{
-               data.forEach(item => dispatch(createTeamActionCreator(item)));
+    // const LoadTeams = function(id){
+    //     return function(dispatch){
+    //        fetch(`http://18.184.249.86/team?`, {
+    //        })
+    //       .then(response => response.json())
+    //       .then(data =>{
+    //             console.log('!!!!', data)
+    //            data.forEach(item => dispatch(createTeamActionCreator(item)));
            
-               return data;
-          })
-          .catch(error => {
-              console.error('Error:', error);
-          });
-        }
-    } 
+    //            return data;
+    //       })
+    //       .catch(error => {
+    //           console.error('Error:', error);
+    //       });
+    //     }
+    // } 
     
     //-------------------
     function GetAllTeams(){
@@ -486,7 +487,7 @@ export const ModalReg = function(props){
                                             // user.dispatch(GetUser()); !!!!!!!!!!!!!!
                                     
                                             user.dispatch(GetUser(signUsername.current.value, signPassword.current.value));
-                                            user.dispatch(LoadTeams(state.user.profile.id));
+                                            // user.dispatch(LoadTeams(state.user.profile.id));
                                             // user.dispatch(GetAllTeams());
                                             signUsername.current.value = '';
                                             signPassword.current.value = '';
