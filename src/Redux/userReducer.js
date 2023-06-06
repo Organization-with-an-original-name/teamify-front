@@ -6,6 +6,7 @@ const CREATE_TEAM = 'CREATE-TEAM';
 const LOAD_MYTEAMS = 'LOAD-MYTEAMS';
 const LOAD_TEAMS = 'LOAD-TEAMS';
 const DELETE_ASS = 'DELETE-ASS';
+const DELETE_SUB = 'DELETE-SUB';
 
 const LOAD_SUB = 'LOAD-SUB';
 const LOAD_ASS = 'LOAD-ASS';
@@ -71,6 +72,14 @@ const userReducer = (state = initialState, action) => {
            })
             console.log('DEL ASS:', state.createdTeams);
             return state;
+        case DELETE_SUB:  
+            state.submitted= state.submitted.filter((item) =>{
+                 if(item.id != action.sub.id){
+                     return item;
+                 }
+            })
+             console.log('DEL SUB:', state.createdTeams);
+             return state;
         // case CREATE_TEAM:  
         //     state.createdTeams = action.teams;
         //     console.log('state:', state);
@@ -143,6 +152,13 @@ export const deleteAssignedActionCreator = (ass) => {
     return {
         type: DELETE_ASS,
         ass: ass
+        
+    }
+}
+export const deleteSubmittedActionCreator = (sub) => {
+    return {
+        type: DELETE_SUB,
+        sub: sub
         
     }
 }

@@ -8,8 +8,8 @@
 }
 .hisitem-icon{
    img{
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
    }
 }
 .team-name, .username{
@@ -39,4 +39,21 @@
 }
 .btn-no{
     background-color: red;
+}
+.rejected{
+    color: red;
+    text-transform: uppercase;
+}
+.approved{
+    color: green;
+    text-transform: uppercase;
+}
+.hisitem-close{
+    flex-grow: 1;
+    padding-right: 40px;
+    display: flex;
+    justify-content: flex-end;
+    button{
+        
+    }
 }
