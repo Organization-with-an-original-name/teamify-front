@@ -13,7 +13,8 @@ import {Routes, Route, BrowserRouter} from 'react-router-dom';
 import  UserContext  from './UserContext';
 import Profile from './components/Profile/profile';
 import CreateTeamPage from './components/CreateTeamPage/CrTeamPage';
-import SearchResults from './components/SearchResults/search';
+import TeamSearch from './components/TeamSearch/teamsearch';
+// import SearchResults from './components/SearchResults/search';
 
 // window.onl= function() {
 //   // Змінюємо URL шлях на новий
@@ -28,6 +29,7 @@ function App() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [userSigned, SetUserSigned] = useState(false);
   const [signed, Setsigned] = useState(false);
+  const [flag, SetFlag] = useState(false);
   
   
 
@@ -60,14 +62,14 @@ function App() {
           </>
         }> 
         </Route>
-        <Route path='/create-team' element={
+        <Route path='/create-team' setFlag={SetFlag} flag={flag} element={
           <>
             <CreateTeamPage />
           </>
         }></Route>
-        <Route path='/search-results' element={
+        <Route path='/team-search' element={
           <>
-            <SearchResults />
+            <TeamSearch />
           </>
         }></Route>
       </Routes>

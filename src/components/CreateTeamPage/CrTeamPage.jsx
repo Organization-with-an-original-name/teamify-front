@@ -30,7 +30,7 @@ const CreateTeamPage = function(props){
             .then(response =>{
                 if(response.ok){
                     alert('Team was created!');
-                    dispatch(createTeamActionCreator(object))
+                    dispatch(createTeamActionCreator(object));
                     navigate('/');
                 
                 }   

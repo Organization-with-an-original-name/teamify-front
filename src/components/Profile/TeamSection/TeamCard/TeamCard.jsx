@@ -27,7 +27,7 @@ const TeamCard = function(props){
     );
 }
 
-function Collapse (props){
+export function Collapse (props){
     const [collapsed, Setcollapsed] = useState(false);
     const descr = useRef();
     const colbtn = useRef();

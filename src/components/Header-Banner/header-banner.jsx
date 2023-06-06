@@ -1,33 +1,25 @@
 import React from "react";
 import './header-banner.scss';
 import UserContext from "../../UserContext";
-import { loadUsersActionCreator, updateKeywordActionCreator } from "../../Redux/allusersReducer";
+import { useNavigate } from "react-router-dom";
+import { loadAllTeamsActionCreator } from "../../Redux/teamsReducer";
+
 
 
 
 export const HeaderBanner = function(){
-
-    const LoadUsers = () => {
-        return function(dispatch){
-            fetch('http://18.184.249.86/user')
-            .then(response =>{
-                if(response.ok){
-                    return response.json();
-                }
-                else{
-                    alert('Some problem was occured!')
-                }
-            })
-            .then(data =>{
-                dispatch(loadUsersActionCreator(data));
-                console.log(data)
-            })
-            .catch(error => {
-            
-              console.log('Error:',error);
-            });
-        }
-}
+    const navigate = useNavigate();
+    // function GetAllTeams(){
+    //     return function(dispatch){
+    //         fetch('http://18.184.249.86/team')
+    //         .then(response => response.json())
+    //         .then(teams =>{
+    //             dispatch(loadAllTeamsActionCreator(teams)); 
+    //             // SetFlag(!flag);
+    //         } );
+        
+    //     }
+    // }
     
     return(
         <UserContext.Consumer>
@@ -41,19 +33,23 @@ export const HeaderBanner = function(){
                                 <div className="header-banner-container">
                                     <h2 className="banner-text mb-3">Find the most exciting Team!</h2>
                                     <div className="banner-search d-flex">
-                                        <div className="search-input-wrap">
+                                        {/* <div className="search-input-wrap">
                                             <input className="search-input" placeholder="Enter teammate" type="text" onClick={(e)=>{
-                                                store.dispatch(updateKeywordActionCreator(e.target.value));
-                                                store.dispatch(LoadUsers());
-                                                console.log(state);
+                                                // store.dispatch(updateKeywordActionCreator(e.target.value));
+                                                // store.dispatch(LoadUsers());
+                                                // console.log(state);
                                                
                                             }} />
-                                        </div>
+                                        </div> */}
                                         {/* <div className="search-input-wrap">
                                             <input className="search-input" placeholder="Enter lorem" type="text" />
                                         </div> */}
                                  
-                                        <input className="search-submit" value="Find Team" type="submit" />
+                                        <input className="search-submit" value="Find Team" type="submit" onClick={()=>{
+                                            navigate('/team-search');
+                                            // store.dispatch(GetAllTeams());
+
+                                        }} />
                                     </div>
                                 </div>
                             </div>

@@ -1,0 +1,36 @@
+.search-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.search-title{
+    border-bottom: 1px solid #DFDFDF;
+    font-weight: 400;
+}
+.teamcard-sub{
+   flex-grow: 1;
+   display: flex;
+   justify-content: flex-end;
+   
+}
+.teamcard-sub-btn{
+    background-color: #18D4A2;
+    border: none;
+    width: 200px;
+    color: white;
+}
+.disabled{
+    background-color: gray !important;
+}
+@media screen and (max-width:570px){
+    .teamcard-sub{
+        flex: 1 1 100%;
+        justify-content: flex-start;
+        .teamcard-sub-btn{
+            width: 100%;
+        }
+    }
+    .teamcard-name{
+        flex-wrap: wrap;
+    }
+}

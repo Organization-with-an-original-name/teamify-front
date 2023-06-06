@@ -8,6 +8,7 @@ import { addUserActionCreator, createTeamActionCreator, loadAccessTokenActionCre
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { postUser } from "../../asyncActions/postuser";
+import { loadAllTeamsActionCreator } from "../../Redux/teamsReducer";
 
 
 const modalRootElement =  document.querySelector('#modal');
@@ -117,7 +118,21 @@ export const ModalReg = function(props){
               console.error('Error:', error);
           });
         }
-    }  
+    } 
+    
+    //-------------------
+    function GetAllTeams(){
+        return function(dispatch){
+            fetch('http://18.184.249.86/team')
+            .then(response => response.json())
+            .then(teams =>{
+                dispatch(loadAllTeamsActionCreator(teams)); 
+              
+            } );
+        
+        }
+    }
+    //-------------------
  
     
     let scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
@@ -472,6 +487,7 @@ export const ModalReg = function(props){
                                     
                                             user.dispatch(GetUser(signUsername.current.value, signPassword.current.value));
                                             user.dispatch(LoadTeams(state.user.profile.id));
+                                            // user.dispatch(GetAllTeams());
                                             signUsername.current.value = '';
                                             signPassword.current.value = '';
                                             
