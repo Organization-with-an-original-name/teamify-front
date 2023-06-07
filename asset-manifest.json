@@ -1,29 +1,36 @@
 {
   "files": {
-    "main.css": "/teamify-front/static/css/main.a3ea789c.css",
-    "main.js": "/teamify-front/static/js/main.34cc64c1.js",
+    "main.css": "/teamify-front/static/css/main.75036649.css",
+    "main.js": "/teamify-front/static/js/main.3e336c0d.js",
     "static/js/787.de905a5d.chunk.js": "/teamify-front/static/js/787.de905a5d.chunk.js",
     "static/media/pointedleft.png": "/teamify-front/static/media/pointedleft.33de0a8395366b2f935d.png",
     "static/media/crteam.webp": "/teamify-front/static/media/crteam.0785adfd9df3d0856d74.webp",
     "static/media/banner.webp": "/teamify-front/static/media/banner.52cc43a806208f89e633.webp",
     "static/media/business-people-team-boss-hold-binoculars-teamwork-banner_48369-10865.avif": "/teamify-front/static/media/business-people-team-boss-hold-binoculars-teamwork-banner_48369-10865.628036f8c081cde6a5a2.avif",
+    "static/media/box.png": "/teamify-front/static/media/box.892bd5952464ffc9399f.png",
     "static/media/wallpaper.jpg": "/teamify-front/static/media/wallpaper.4e45584031cdc6d78aef.jpg",
+    "static/media/send.png": "/teamify-front/static/media/send.82e6d0a6a0226b710906.png",
     "static/media/hello.png": "/teamify-front/static/media/hello.035bc408ee23034e6818.png",
     "static/media/close.png": "/teamify-front/static/media/close.d6a3b3b6496e0f6deeea.png",
     "static/media/tg.png": "/teamify-front/static/media/tg.e9722f26cc228e817986.png",
+    "static/media/request.png": "/teamify-front/static/media/request.53613c64f6a7dffec16b.png",
     "static/media/check.png": "/teamify-front/static/media/check.0e163e83492acb677d72.png",
+    "static/media/undo.png": "/teamify-front/static/media/undo.0c3e07d4ceb27648f7ec.png",
     "static/media/tour-icon.png": "/teamify-front/static/media/tour-icon.937a68ced19aad04f009.png",
     "static/media/human.jpeg": "/teamify-front/static/media/human.0dd0bfca88542b56242f.jpeg",
+    "static/media/happy.png": "/teamify-front/static/media/happy.3c976fd26bf107d3c595.png",
     "static/media/inst.png": "/teamify-front/static/media/inst.75e0546a6b5abe4c0506.png",
     "static/media/exclamation.png": "/teamify-front/static/media/exclamation.02f31f5c44281e6f98bb.png",
+    "static/media/unhappy.png": "/teamify-front/static/media/unhappy.47473bac387f3cd5e98a.png",
+    "static/media/bin.png": "/teamify-front/static/media/bin.fa7887ac547cd590dcbf.png",
     "static/media/linked.png": "/teamify-front/static/media/linked.f249b38224ca41a0b909.png",
     "index.html": "/teamify-front/index.html",
-    "main.a3ea789c.css.map": "/teamify-front/static/css/main.a3ea789c.css.map",
-    "main.34cc64c1.js.map": "/teamify-front/static/js/main.34cc64c1.js.map",
+    "main.75036649.css.map": "/teamify-front/static/css/main.75036649.css.map",
+    "main.3e336c0d.js.map": "/teamify-front/static/js/main.3e336c0d.js.map",
     "787.de905a5d.chunk.js.map": "/teamify-front/static/js/787.de905a5d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a3ea789c.css",
-    "static/js/main.34cc64c1.js"
+    "static/css/main.75036649.css",
+    "static/js/main.3e336c0d.js"
   ]
 }
