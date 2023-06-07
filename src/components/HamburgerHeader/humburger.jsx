@@ -113,7 +113,7 @@ export default function Humburger(props) {
                   <div className='humburger-bg shadow-3 p-4'>
                     <a href="#" className='humburger-bg-link'>lorem</a>
                     <a href="#" className='humburger-bg-link'>lorem</a>
-                    <a href="#" className='humburger-bg-link'>lorem</a>
+                    <li className='humburger-bg-link'><Link  to='/application-history'>Applications</Link></li>
                     <li className='humburger-bg-link'><Link to='/create-team'>Create Team</Link></li>
                     <li className='humburger-bg-link'><Link to='/my-profile'>My account</Link></li>
                     <button className="btn-logout" onClick={()=>{

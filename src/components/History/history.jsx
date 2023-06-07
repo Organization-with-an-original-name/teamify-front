@@ -8,6 +8,7 @@ import send from '../../assets/icon/send.png';
 import request from '../../assets/icon/request.png';
 import happy from '../../assets/icon/happy.png';
 import unhappy from '../../assets/icon/unhappy.png';
+import empty from '../../assets/icon/box.png';
 
 
 const History = function(props){
@@ -102,17 +103,28 @@ const History = function(props){
                 (store) =>{
                     let state = store.getState();
                     return(
-                        <section className="history">
-                            <button onClick={()=>{
-                                SetFlag(!flag);
-                            }}>Reset</button>
-                            {state.user.profile.id}
+                        <section className="history mt-5">
+                            
+                        
                             <div className="history-wrap">
                                 <div className="container history-container">
+                                <button className="reset-btn" onClick={()=>{
+                                SetFlag(!flag);
+                                    }}></button>
                                     <h2 className="history-title">My History:</h2>
-                                    {state.user.submitted.map(item => <SubmittedItem flag={flag} setflag={SetFlag} data={item} />)}
+                                    {state.user.submitted.length === 0?
+                                    <div className="history-noitems">Empty <img src={empty} alt="box" /></div>
+                                    :
+                                    state.user.submitted.map(item => <SubmittedItem flag={flag} setflag={SetFlag} data={item} />)
+                                    }
                                     <h2 className="mt-4 history-title">My Requests:</h2>
-                                    {state.user.assigned.map(item => <AssignedItem flag={flag} setflag={SetFlag} data={item} />)}
+                                    {state.user.assigned.length === 0?
+                                        <div className="history-noitems">Empty <img src={empty} alt="box" /></div>
+                                    :
+                                    state.user.assigned.map(item => <AssignedItem flag={flag} setflag={SetFlag} data={item} />)
+                                    }
+                                    
+            
                                 </div>
                             </div>
                         </section>
@@ -201,6 +213,17 @@ const SubmittedItem = function(props){
             <div className="hisitem">
                 <div className="hisitem-wrap d-flex align-items-center">
                     <p className="m-0 p-3"><span className="hisitem-icon"><img src={unhappy} alt="send" /></span> Your application to <span className="team-name">"{itemstate.name}"</span> was <span className="rejected">rejected</span> !</p>
+                    <div className="hisitem-close">
+                        <button className="hisitem-close-btn" onClick={()=>{
+                            //  store.dispatch(deleteAssignedActionCreator(props.data));
+                            let state = mycontext.getState();
+                            deleteASS(props.data.id, state.user.accessToken);
+                            mycontext.dispatch(deleteSubmittedActionCreator(props.data));
+                            props.setflag(!props.flag);
+                            
+                            
+                        }}></button>
+                    </div>
                     
                 </div>
             </div>
@@ -216,7 +239,7 @@ const SubmittedItem = function(props){
                         <button className="hisitem-close-btn" onClick={()=>{
                             //  store.dispatch(deleteAssignedActionCreator(props.data));
                             let state = mycontext.getState();
-                            //!!! deleteASS(props.data.id, state.user.accessToken);
+                            deleteASS(props.data.id, state.user.accessToken);
                             mycontext.dispatch(deleteSubmittedActionCreator(props.data));
                             props.setflag(!props.flag);
                             
@@ -233,7 +256,8 @@ const SubmittedItem = function(props){
 //--------------------------
 const AssignedItem = function(props){
     const [flag, SetFlag] = useState(false);
-
+    const yes = useRef();
+    const no = useRef();
    
     const [itemstate, setItemState] = useState({});
     const [userstate, setUserState] = useState({});
@@ -346,15 +370,19 @@ const AssignedItem = function(props){
                             <div className="hisitem-wrap d-flex align-items-center">
                                 <p className="m-0 p-3"><span className="hisitem-icon"><img src={request} alt="send" /></span> <span className="username">@{userstate.username}</span> want to join your team: <span className="team-name">"{itemstate.name}"</span>!</p>
                                 <div className="hisitem-controls">
-                                    <button className="hisitem-controls-btn btn-yes" onClick={()=>{
+                                    <button ref={yes} className="hisitem-controls-btn btn-yes" onClick={()=>{
                                         approve(props.data.id, state.user.accessToken);
-                                        store.dispatch(deleteAssignedActionCreator(props.data));
+                                        // store.dispatch(deleteAssignedActionCreator(props.data));
+                                        yes.current.classList.add('disabled-btn');
+                                        no.current.classList.remove('disabled-btn');
                                         
                                        
                                     }}>Yes</button>
-                                    <button className="hisitem-controls-btn btn-no" onClick={()=>{
+                                    <button ref={no} className="hisitem-controls-btn btn-no" onClick={()=>{
                                          disapprove(props.data.id, state.user.accessToken);
-                                         store.dispatch(deleteAssignedActionCreator(props.data));
+                                        //  store.dispatch(deleteAssignedActionCreator(props.data));
+                                        no.current.classList.add('disabled-btn');
+                                        yes.current.classList.remove('disabled-btn');
                                        
                                     }}>No</button>
                                 </div>

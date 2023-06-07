@@ -64,3 +64,35 @@
         }
     }
 }
+.hisitem-controls-btn:hover{    
+    scale: (1.1);
+}
+.disabled-btn{
+    background-color: gray !important;
+    &:hover{
+        scale: (1);
+    }
+}
+.history-container{
+    position: relative;
+}
+.reset-btn{
+    background: url('../../assets/icon/undo.png');
+    height: 30px;
+    width: 30px;
+    background-size: contain;
+    border: none;
+    position: absolute;
+    right: 20px;
+
+}
+.history-noitems{
+    text-align: center;
+    padding: 100px 0;
+    font-size: 44px;
+    border: 1px solid black;
+    img{
+        width: 60px;
+        height: 60px;
+    }
+}
