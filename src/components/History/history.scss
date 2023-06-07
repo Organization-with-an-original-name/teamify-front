@@ -54,6 +54,13 @@
     display: flex;
     justify-content: flex-end;
     button{
-        
+        background: url('../../assets/icon/bin.png');
+        background-size: contain;
+        border: none;
+        height: 30px;
+        width: 30px;
+        &:hover{
+            scale: (1.3);
+        }
     }
 }

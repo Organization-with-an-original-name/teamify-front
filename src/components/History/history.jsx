@@ -10,15 +10,16 @@ import happy from '../../assets/icon/happy.png';
 import unhappy from '../../assets/icon/unhappy.png';
 
 
-
 const History = function(props){
    
     const mycontext= useContext(UserContext);
     const [applications, setApplications] = useState([]);
     const [flag, SetFlag] = useState(false);
+    const [flag1, SetFlag1] = useState(false);
+    const [flag2, SetFlag2] = useState(false);
 
-    // useEffect(()=>alert('H rendering'))
-    // let applicationsId = [];
+    // useEffect(()=>alert(mycontext.getState().user.assigned.length))
+    // let applicationsId = []; applications.length
     const getSubmitted = function(acessToken){
         return function(dispatch){
             fetch('http://18.184.249.86/application/submitted',{
@@ -35,6 +36,8 @@ const History = function(props){
                
                 return response.json();
                
+
+               
        
             }
             else{
@@ -44,7 +47,7 @@ const History = function(props){
         .then(data =>{ 
             console.log('Data:', data)
             dispatch( loadSubmittedActionCreator(data));
-            SetFlag(!flag);
+            SetFlag1(!flag1);
 
         })
         .catch(error => console.log('Error:', error))
@@ -76,7 +79,7 @@ const History = function(props){
         .then(data =>{ 
             console.log('Data:', data)
             dispatch(loadAssignedActionCreator(data));
-            SetFlag(!flag);
+            SetFlag2(!flag2);
 
         })
         .catch(error => console.log('Error:', error))
@@ -119,7 +122,6 @@ const History = function(props){
         </UserContext.Consumer>
     );
 }
-
 export default History;
 
 const SubmittedItem = function(props){
@@ -129,15 +131,11 @@ const SubmittedItem = function(props){
     const [itemstate, setItemState] = useState({});
     const mycontext = useContext(UserContext);
 
-    const getTeam = function(id){
-
+    const getTeam = function(id){   
         fetch(`http://18.184.249.86/team/${id}`)
             .then(response => {
             if(response.ok){
-               
                 return response.json();
-               
-       
             }
             else{
                 alert('Some error was occured!')
@@ -146,13 +144,12 @@ const SubmittedItem = function(props){
         .then(data =>{ 
             console.log('Data pro timku:', data)
             setItemState(data);
-            props.setflag(!props.flag);
-
-
         })
         .catch(error => console.log('Error:', error))
       
     }
+
+    
     const deleteASS = function(id, accessToken){
         fetch(`http://18.184.249.86/application/${id}`,{
             method: 'DELETE',
@@ -162,35 +159,31 @@ const SubmittedItem = function(props){
               'Accept': 'application/json',
               "Access-token" : accessToken
             },
-        })
-        
+        })   
         .then(response => {
         if(response.ok){
             SetFlag(!flag);
             return response.json();
-           
-   
         }
         else{
             alert('Some error was occured!')
         }
     })
-    // .then(data =>{ 
-    //     console.log('Data from delete:', data);
-    //     SetFlag(!flag)
-       
-     
-
-
-    // })
-    
     .catch(error => console.log('Error:', error))
     }
     
-    useEffect(()=>{
-        getTeam(props.data.teamId);
-    }, [])
 
+    useEffect(()=>{
+        async function fetchData() {
+            const response = await fetch(`http://18.184.249.86/team/${props.data.teamId}`);
+            const json = await response.json();
+            setItemState(json);
+        }
+        fetchData();
+       
+        // getTeam(props.data.teamId);
+    },[]);
+    
     if(props.data.status === 'NEW'){
         return(
         
@@ -228,17 +221,16 @@ const SubmittedItem = function(props){
                             props.setflag(!props.flag);
                             
                             
-                        }}>X</button>
+                        }}></button>
                     </div>
                     
                 </div>
             </div>
         );
     }
-
-   
 }
 
+//--------------------------
 const AssignedItem = function(props){
     const [flag, SetFlag] = useState(false);
 
@@ -257,13 +249,9 @@ const AssignedItem = function(props){
               "Access-token" : accessToken
             },
         })
-        
         .then(response => {
         if(response.ok){
-           
             return response.json();
-           
-   
         }
         else{
             alert('Some error was occured!')
@@ -272,10 +260,6 @@ const AssignedItem = function(props){
     .then(data =>{ 
         console.log('Data pro approve:', data);
         SetFlag(!flag)
-       
-     
-
-
     })
     
     .catch(error => console.log('Error:', error))
@@ -290,13 +274,9 @@ const AssignedItem = function(props){
               "Access-token" : accessToken
             },
         })
-        
         .then(response => {
         if(response.ok){
-           
             return response.json();
-           
-   
         }
         else{
             alert('Some error was occured!')
@@ -305,57 +285,17 @@ const AssignedItem = function(props){
     .then(data =>{ 
         console.log('Data pro approve:', data);
         SetFlag(!flag)
-       
-     
-
 
     })
     
     .catch(error => console.log('Error:', error))
     }
-    // const deleteASS = function(id, accessToken){
-    //     fetch(`http://18.184.249.86/application/${id}`,{
-    //         method: 'DELETE',
-    //         mode: 'cors',
-    //         headers: {
-    //           'Content-Type': 'application/json',
-    //           'Accept': 'application/json',
-    //           "Access-token" : accessToken
-    //         },
-    //     })
-        
-    //     .then(response => {
-    //     if(response.ok){
-           
-    //         return response.json();
-           
-   
-    //     }
-    //     else{
-    //         alert('Some error was occured!')
-    //     }
-    // })
-    // // .then(data =>{ 
-    // //     console.log('Data from delete:', data);
-    // //     SetFlag(!flag)
-       
-     
-
-
-    // // })
-    
-    // .catch(error => console.log('Error:', error))
-    // }
-
     const getTeam = function(id){
-
         fetch(`http://18.184.249.86/team/${id}`)
             .then(response => {
             if(response.ok){
-               
+
                 return response.json();
-               
-       
             }
             else{
                 alert('Some error was occured!')
@@ -364,28 +304,15 @@ const AssignedItem = function(props){
         .then(data =>{ 
             console.log('Data pro timku:', data)
             setItemState(data);
-          
-           
-           
-         
-
-
+            
         })
-    
-      
-        
         .catch(error => console.log('Error:', error))
-      
     }
     const getUser= function(id){
-
         fetch(`http://18.184.249.86/user/${id}`)
             .then(response => {
             if(response.ok){
-               
                 return response.json();
-               
-       
             }
             else{
                 alert('Some error was occured!')
@@ -394,30 +321,20 @@ const AssignedItem = function(props){
         .then(data =>{ 
             console.log('Data pro usera:', data)
             setUserState(data);
-          
-           
-        
             
-
-
         })
-        .catch(error => console.log('Error:', error))
-      
+        .catch(error => console.log('Error:', error)) 
     }
-
-   
-          
-
-    
     useEffect(()=>{
-        getTeam(props.data.teamId);
-        getUser(props.data.applicantId);
-        
-        
-        
        
+        getTeam(props.data.teamId);
+        getUser(props.data.applicantId);    
     }, [])
+
    
+    
+
+
     return(
         <UserContext.Consumer>
             {
@@ -432,13 +349,13 @@ const AssignedItem = function(props){
                                     <button className="hisitem-controls-btn btn-yes" onClick={()=>{
                                         approve(props.data.id, state.user.accessToken);
                                         store.dispatch(deleteAssignedActionCreator(props.data));
-                                        // deleteASS(props.data.id, state.user.accessToken);
+                                        
                                        
                                     }}>Yes</button>
                                     <button className="hisitem-controls-btn btn-no" onClick={()=>{
                                          disapprove(props.data.id, state.user.accessToken);
                                          store.dispatch(deleteAssignedActionCreator(props.data));
-                                        //  deleteASS(props.data.id, state.user.accessToken);
+                                       
                                     }}>No</button>
                                 </div>
                             </div>
@@ -448,19 +365,4 @@ const AssignedItem = function(props){
             }
         </UserContext.Consumer>
     );
-
-    // return(
-     
-    //     <div className="assitem">
-    //         <div className="hisitem-wrap d-flex align-items-center">
-    //             <p className="m-0 p-3"><span className="hisitem-icon"><img src={request} alt="send" /></span> <span className="username">@{userstate.username}</span> want to join your team: <span className="team-name">"{itemstate.name}"</span>!</p>
-    //             <div className="hisitem-controls">
-    //                 <button className="hisitem-controls-btn btn-yes" onClick={()=>{
-    //                     approve(props.data.id, )
-    //                 }}>Yes</button>
-    //                 <button className="hisitem-controls-btn btn-no">No</button>
-    //             </div>
-    //         </div>
-    //     </div>
-    // );
 }
