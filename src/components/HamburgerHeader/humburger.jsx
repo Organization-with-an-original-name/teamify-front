@@ -63,13 +63,17 @@ export default function Humburger(props) {
           
                 <MDBCollapse className='humburger-collapse' show={showNavExternal3}>
                   <div className='humburger-bg shadow-3 p-4'>
-                    <a href="#" className='humburger-bg-link'>lorem</a>
-                    <a href="#" className='humburger-bg-link'>lorem</a>
-                    <a href="#" className='humburger-bg-link'>lorem</a>
-                    <a href="#" className='humburger-bg-link'>lorem</a>
-                    <li onClick={()=>{
+                  <li className='humburger-bg-link' onClick={()=>{
+                        alert('Sign in or create an account!')
+                    }}>Applications</li>
+                    <li className='humburger-bg-link' onClick={()=>{
+                        alert('Sign in or create an account!')
+                    }}>Create Team</li>
+                  
+                    <li className='humburger-bg-link' onClick={()=>{
                         alert('Sign in or create an account!')
                     }}>My account</li>
+                   
                     <div className="header-btns d-flex pt-3">
                           <button className="humburger-btn btn-reg" onClick={RegHandler}></button>
                           <button className="humburger-btn btn-log" onClick={LogHandler}></button>
@@ -111,8 +115,7 @@ export default function Humburger(props) {
           
                 <MDBCollapse className='humburger-collapse' show={showNavExternal3}>
                   <div className='humburger-bg shadow-3 p-4'>
-                    <a href="#" className='humburger-bg-link'>lorem</a>
-                    <a href="#" className='humburger-bg-link'>lorem</a>
+                  
                     <li className='humburger-bg-link'><Link  to='/application-history'>Applications</Link></li>
                     <li className='humburger-bg-link'><Link to='/create-team'>Create Team</Link></li>
                     <li className='humburger-bg-link'><Link to='/my-profile'>My account</Link></li>

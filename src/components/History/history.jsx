@@ -78,8 +78,8 @@ const History = function(props){
             }
         })
         .then(data =>{ 
-            console.log('Data:', data)
-            dispatch(loadAssignedActionCreator(data));
+         
+            dispatch(loadAssignedActionCreator(data.filter((item) => item.status === 'NEW')));
             SetFlag2(!flag2);
 
         })
@@ -103,7 +103,7 @@ const History = function(props){
                 (store) =>{
                     let state = store.getState();
                     return(
-                        <section className="history mt-5">
+                        <section className="history mt-5 mb-3">
                             
                         
                             <div className="history-wrap">
@@ -372,7 +372,9 @@ const AssignedItem = function(props){
                                 <div className="hisitem-controls">
                                     <button ref={yes} className="hisitem-controls-btn btn-yes" onClick={()=>{
                                         approve(props.data.id, state.user.accessToken);
-                                        // store.dispatch(deleteAssignedActionCreator(props.data));
+                                        store.dispatch(deleteAssignedActionCreator(props.data));
+                                        
+
                                         yes.current.classList.add('disabled-btn');
                                         no.current.classList.remove('disabled-btn');
                                         
@@ -380,7 +382,8 @@ const AssignedItem = function(props){
                                     }}>Yes</button>
                                     <button ref={no} className="hisitem-controls-btn btn-no" onClick={()=>{
                                          disapprove(props.data.id, state.user.accessToken);
-                                        //  store.dispatch(deleteAssignedActionCreator(props.data));
+                                         store.dispatch(deleteAssignedActionCreator(props.data));
+                                        
                                         no.current.classList.add('disabled-btn');
                                         yes.current.classList.remove('disabled-btn');
                                        

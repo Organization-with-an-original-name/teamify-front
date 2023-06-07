@@ -23,6 +23,9 @@ let initialState =  {
    
 }
 
+  
+  
+
 const userReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_USER:  
@@ -57,8 +60,10 @@ const userReducer = (state = initialState, action) => {
             console.log('Sub:', state);
             return state;
         case LOAD_ASS:  
+            // state.assigned = action.ass;
+           
             state.assigned = action.ass;
-            console.log('Ass:', state);
+            console.log('Ass:', action.ass);
             return state;
         case LOAD_MYTEAMS:  
             state.createdTeams= action.teams;

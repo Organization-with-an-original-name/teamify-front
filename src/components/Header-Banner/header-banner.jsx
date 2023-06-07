@@ -46,7 +46,14 @@ export const HeaderBanner = function(){
                                         </div> */}
                                  
                                         <input className="search-submit" value="Find Team" type="submit" onClick={()=>{
-                                            navigate('/team-search');
+                                            // navigate('/team-search');
+                                            
+                                            if(state.user.accessToken === ''){
+                                                alert('Please sign in!')
+                                            }
+                                            else{
+                                                navigate('/team-search');
+                                            }
                                             // store.dispatch(GetAllTeams());
 
                                         }} />

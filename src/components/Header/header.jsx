@@ -65,12 +65,17 @@ export const Header = function(props){
                                         <div className="header-links d-flex m-0">
                                                 <ul className="p-0 m-0">
                                                     
-                                                    <li>lorem</li>
-                                                    <li>lorem</li>
-                                                    <li>lorem</li>
+                                                <li onClick={()=>{
+                                                        alert('Sign in or create an account!')
+                                                    }}>Applications</li>
+                                                    <li onClick={()=>{
+                                                        alert('Sign in or create an account!')
+                                                    }}>Create Team</li>
+                                                 
                                                     <li onClick={()=>{
                                                         alert('Sign in or create an account!')
                                                     }}>My account</li>
+                                        
                                                 </ul>
                                         </div>
                                         <div className="header-btns d-flex">
@@ -89,9 +94,13 @@ export const Header = function(props){
                                         <div className="header-links d-flex m-0">
                                                 <ul className="p-0 m-0">
                                                     
-                                                    <li>lorem</li>
-                                                    <li>lorem</li>
-                                                    <li>lorem</li>
+                                                    <li onClick={()=>{
+                                                        alert('Sign in or create an account!')
+                                                    }}>Applications</li>
+                                                    <li onClick={()=>{
+                                                        alert('Sign in or create an account!')
+                                                    }}>Create Team</li>
+                                                 
                                                     <li onClick={()=>{
                                                         alert('Sign in or create an account!')
                                                     }}>My account</li>
@@ -118,7 +127,7 @@ export const Header = function(props){
                                         <div className="header-links d-flex m-0">
                                                 <ul ref={links} className="p-0 m-0">
                                                   
-                                                    <li>lorem</li>
+                                                    
                                                     <li><NavLink  to='/application-history'>Applications</NavLink></li>
                                                     <li><NavLink  to='/create-team'>Create Team</NavLink></li>
                                                     {/* <li><Link_ path='/my-profile' text='My account'></Link_></li> */}
@@ -147,7 +156,7 @@ export const Header = function(props){
                                         <div className="header-links d-flex m-0">
                                                 <ul className="p-0 m-0">
                                                     
-                                                    <li>lorem</li>
+                                                 
                                                     <li><NavLink  to='/application-history'>Applications</NavLink></li>
                                                     <li><NavLink  to='/create-team'>Create Team</NavLink></li>
                                                     <li><Link to='/my-profile'>My account</Link></li>
